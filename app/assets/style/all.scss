@@ -1,0 +1,24 @@
+@import "functions";
+@import "./helpers/variables";
+@import "mixins";
+@import "bootstrap";
+
+
+
+@import "base";
+@import "./component/swiper";
+@import "./component/customNavbar";
+@import "./component/subscribe";
+@import "./component/coustomCheckout";
+@import "layout";
+@import "index";
+@import "result";
+@import "detail";
+@import "reserve";
+@import "success";
+@import "login";
+@import "member";
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "./helpers/variables";// 複製一份 variable 來覆蓋
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/bootstrap";

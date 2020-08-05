@@ -1,0 +1,64 @@
+
+
+.inputGroupBtn{
+    padding: 17px 16px;
+    border-radius: 0 4px 4px 0;
+    background: $primary;
+    color:#fff;
+    border:0;
+    outline-color: $primary;
+    @include media-breakpoint-up(md) {
+        padding: 17px 32px; 
+    }
+    
+}
+.inputGroupBtn--w{
+    @include media-breakpoint-up(md) {
+        width: 33.3333%;
+    }
+    @include media-breakpoint-up(xl) {
+        width: 23.65%; 
+    }
+}
+
+input[type=email]{
+    padding: 16px 0 18px 21px;
+    border-radius: 4px 0 0 4px;
+    border:0;
+    outline-color: $primary;
+}
+.inputCustom--w{
+    @include media-breakpoint-up(md){
+        width:66.6666%;
+    }
+    @include media-breakpoint-up(xl){
+        width:76.35%;
+    }
+}
+
+.inputCustom--wChange{
+    width: 212px;
+    @include media-breakpoint-up(md) {
+       width: 420px; 
+    }
+    @include media-breakpoint-up(lg) {
+        width: 390px;
+    }
+}
+
+.inputCustom--p{
+    // padding: 16px 0 24px 0;
+    @include media-breakpoint-up(md){
+    padding: 29px 0 28px 0;
+ }
+}
+::placeholder{
+    font-size: 1rem;
+}
+
+.inputCustomTitle--my{
+    margin:24px 0;
+    @include media-breakpoint-up(md) {
+      margin: 92px 0 ;  
+    }
+}

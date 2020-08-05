@@ -1,0 +1,215 @@
+body{
+    color:$secondary;
+    margin: 0;
+    padding: 0; 
+    
+}
+img{
+    max-width:100%;
+    height: auto;
+}
+a{
+    text-decoration: none; 
+}
+ul,li{
+    list-style: none;
+}
+
+// 字體大小響應式(自訂）
+// $font-sizes:(
+//     xs:$font-size-base*0.75, //12px
+//     sm:$font-size-base*0.875, //14px 
+//     1:$font-size-base*1, //16px
+//     2:$font-size-base*1.25,//20px
+//     3:$font-size-base*1.5,//24px
+//     4:$font-size-base*1.75,//28px
+//     5:$font-size-base*2,// 32px
+//     6:$font-size-base*2.25,//36px
+//     7:$font-size-base*2.625,//42px
+//     8:$font-size-base*3,//48px
+//     9:$font-size-base*4,//64px
+//     10:$font-size-base*4.5//72px
+  
+  
+// )!default;
+
+// mixin
+
+// @mixin bg-cover{
+//     background-position: center center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+    
+// }
+
+// // 字體大小響應式
+// @mixin response($breakpoint){
+//     @media(min-width: map-get($map: $grid-breakpoints, $key:$breakpoint)){
+//         @content;
+//     }
+// }
+// @each $name,$value in $font-sizes{
+//     @each $breakpoint in map-keys($grid-breakpoints){
+//         @include response($breakpoint){
+//             .fz-#{$breakpoint}-#{$name}{
+//                 font-size: $value;
+//                 // line-height: map-get($map: , $key: );
+//             }
+//         }
+//     }
+// }
+// 字型
+$Roboto:'Roboto',sans-serif;
+$OpenSans:'Open Sans',sans-serif;
+$Raleway:'Raleway',sans-serif;
+
+.fontRoboto{
+    font-family:$Roboto;
+}
+.fontOpenSans{
+    font-family:$OpenSans ;
+}
+.fontRaleway{
+    font-family: $Raleway;
+}
+
+// 字體大小
+
+.fz-xs{
+    font-size: .625rem;//10px
+}
+.fz-sm{
+    font-size: .75rem;//12px
+}
+.fz-md{
+    font-size: .875rem;//14px
+}
+@include media-breakpoint-up(md){
+    
+    .fz-md-xs{
+        font-size: .625rem;//10px
+    } 
+    .fz-md-sm{
+        font-size: .75rem;//12px
+    }
+    .fz-md-md{
+        font-size: .875rem;//14px
+    }
+    .fz-md-h1{
+        font-size: 3rem;
+    }  
+    .fz-md-h3{
+        font-size: 2rem;
+    }
+    .fz-md-h4{
+        font-size: 1.5rem;
+    }
+    .fz-md-h6{
+        font-size: 1rem;
+    }
+}
+@include media-breakpoint-up(lg){
+    .fz-lg-xs{
+        font-size: .625rem;//10px
+    } 
+    .fz-lg-sm{
+        font-size: .75rem;//12px
+    }
+    .fz-lg-md{
+        font-size: .875rem;//14px
+    } 
+    .fz-lg-h6{
+        font-size: 1rem;
+    }  
+    .fz-lg-h5{
+        font-size: 1.25rem;
+    }   
+    .fz-lg-h4{
+        font-size: 1.5rem;
+    }   
+    .fz-lg-h3{
+        font-size: 2rem;
+    }   
+    .fz-lg-h2{
+        font-size: 2.25rem;
+    }   
+    .fz-lg-h1{
+        font-size: 3rem;
+    }  
+    .lh-lg-sm{
+        line-height: 1.2;
+    }    
+}
+
+
+// .font-md{
+//     font-size: 0.875rem;//14px
+// }
+// .font-sm{
+//     font-size: 0.75rem;//12px
+// }
+// .font-md-basic{
+//     @include media-breakpoint-up(md) { 
+//         font-size: 1rem;//16px 
+//     }
+    
+// }
+// .font-lg-md{
+//     @include media-breakpoint-up(lg){
+//         font-size: 0.875rem;
+//     }
+// }
+
+// .font-md-themeTitle{
+//     @include media-breakpoint-up(md) {
+//         font-size: 2rem;//32px
+//     }
+// }
+// .font-md-cardTitle{
+//     @include media-breakpoint-up(md) {
+//         font-size:1.5rem ;//24px
+//     }
+// }
+// .font-lg-basic{
+//     @include media-breakpoint-up(lg) {
+//         font-size: 1rem;
+//     }
+// }
+
+
+
+//客訂padding
+.py-customer{
+    
+    @include media-breakpoint-up(lg) {
+        padding-top: 27px !important;
+        padding-bottom: 26px !important;
+    }
+}
+
+// .img-linear{
+ 
+   
+.object-cover{
+   object-fit: cover; 
+}
+   
+.bg-cover{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+// footer設定
+.fixed-bottom{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // @include media-breakpoint-up(md){
+    //     position: fixed;
+    // }
+    // @include media-breakpoint-up(xl){
+    //     position:relative;
+    // }
+}

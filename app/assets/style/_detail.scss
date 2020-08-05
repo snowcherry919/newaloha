@@ -1,0 +1,143 @@
+//手機版時圖片滿寬
+.carousel--fullScreen{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+//輪播圖片高度設定
+.carousel__Img--h{
+    height: 247px;
+    object-fit: cover;
+}
+.album--h{
+    height: 268px;
+    @include media-breakpoint-up(lg){
+        height: 434px;
+    }
+}
+
+.albumLarge-w{
+    width: 390px;
+}
+.albumRT-wh{
+    // width: 296px;
+    height: 132px;
+    @include media-breakpoint-up(lg){
+        height: 213px;
+    }
+}
+.albumRBL-wh{
+    width: 132px;
+    height: 132px;
+    @include media-breakpoint-up(lg){
+        height: 213px;
+        width: 213px;
+    }
+}
+.albumRBR-wh{
+    width: 160px;
+    height: 93px;
+    @include media-breakpoint-up(lg){
+        height: 151px;
+        width: 246px;
+    }
+}
+
+.customBtn{
+    font-size: 13px;
+    padding: 8px 18px 8px 19px;
+    @include media-breakpoint-up(lg){
+        font-size: 1rem;
+        padding: 16px 47px;
+        height: 54px;
+    }
+    // width: 160px;
+}
+.customCard--border{
+    border:1px solid #f1f0f8;
+    border-width: 1px 1px 0 0;
+    @include media-breakpoint-up(md){
+        border:0;
+    }
+}
+
+.customTableHeader{
+    display: none;
+    @include media-breakpoint-up(md){
+        display: table-header-group;
+    }
+}
+//調整table th 在小螢幕隱藏後再顯示
+.customTableTd{
+    display: none;
+    @include media-breakpoint-up(md){
+        display: table-cell!important;
+    }
+}
+
+// th表格寬度
+.customTableHeader--w{
+   
+    @include media-breakpoint-up(md){
+        width: 55%;
+    }
+    @include media-breakpoint-up(lg){
+        width: 60%;
+    }
+}
+.choiceRoom{
+    .table th ,tr {
+    @include media-breakpoint-up(md){
+        border-bottom: 1px solid #dee2e6;
+    }
+   
+    }
+}
+
+// .table tr:nth-child(3){
+//     @include media-breakpoint-up(md){
+//         border-bottom:none;
+//     }
+// }
+// 房間圖片尺寸
+.roomImg--w{
+    width: 150px;
+    flex-shrink: 0;
+   
+    @include media-breakpoint-up(lg){
+        width: 255px;
+    }
+}
+.roomImg{
+    width:100%;
+    height: 150px;
+    border-radius: 4px 0 0 0px; 
+    object-fit: cover;
+    @include media-breakpoint-up(md){
+        border-radius: 8px 0 0 8px; 
+        height: 150px;
+        
+    }
+    @include media-breakpoint-up(lg){
+       
+        height: 175px;
+    }
+}
+// icon排列
+.roomDetails{
+    li{
+
+        @include media-breakpoint-up(lg){
+            display: inline-block;
+            width: 150px; 
+            font-size: 14px; 
+            line-height: 1;
+        }
+          
+    }
+    @include media-breakpoint-up(lg){
+        width:320px;
+        // height: 150px;
+    }
+    
+}
+

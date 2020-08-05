@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%- title %></title>
+    <!-- datepicker -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+   
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <!--Plugin CSS file with desired skin-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- self -->
+    <link rel="stylesheet" href="./assets/style/all.css">
+  </head>
+
+  <body>
+    
+    <header class="container">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="customNavbar  d-flex align-items-center ">
+            <!-- 選單 bar -->
+            <input type="checkbox" id="menuControl">
+            <label for="menuControl" class="menuBtn mb-0 d-md-none mr-auto">
+              <i class="fas fa-bars "></i>
+            </label>
+            <!-- logo圖 -->
+            <h1 class="m-0 mr-auto logo">
+              <a href="index.html" class="hide-text">
+                ALOHA
+              </a>
+            </h1>
+            <!-- 手機版右側的login -->
+            <ul class="m-0 p-0 d-md-none">
+              <li class="list-unstyled">
+                <a href="login.html" class="text-dark fontRoboto text-decoration-none font-weight-bold">Login</a>
+              </li>
+            </ul>
+            <!-- 選單 -->
+            <nav class="siderList ml-auto ">
+              <ul class="list-unstyled d-md-flex align-items-center mb-0">
+                <li>
+                    <!-- <a href="#" class="siderLink fontRoboto text-decoration-none ">
+                      <i class="fas fa-globe "></i>
+                    </a> -->
+                  <div class="dropdown">
+                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-globe"></i>
+                      </a>
+                    
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">繁體中文</a>
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="#">日文</a>
+                      </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="signup.html" class="siderLink  fontRoboto text-decoration-none  ">Sign up</a> 
+                </li>
+                <li class="siderLinkLogin ">
+                    <a href="login.html" class="siderLink fontRoboto text-decoration-none ">Login</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <%- contents %>
+
+
+
+    
+    
+
+    <footer class="container footer fixed-bottom">
+      <div class="row flex-column-reverse align-items-center flex-md-row py-4 py-md-0 ">
+        <div class="col-12 col-md-6  col-xl-4 offset-xl-2">
+          <!-- <div class="d-flex flex-column-reverse align-items-center flex-md-row fontOpenSans py-4 py-md-0"> -->
+            <!-- 版權宣告 -->
+            <p class="text-third fz-md mb-0 mt-3 mt-md-0 mr-md-auto  mr-lg-8 py-md-4 py-customer text-center text-md-left">
+              &copy; 2020 ALOHA, Inc. All rights reserved.
+            </p>
+        </div>
+        <!-- faqs -->
+        <ul class="col-12 col-md-6  col-xl-4 offset-xl-0 list-unstyled d-flex justify-content-center justify-content-md-end  mb-0">
+            <li class="pr-4">
+            <a href="#" class="fz-md d-block py-md-4 py-customer">FAQs</a>
+            </li>
+            <li class="pr-4">
+            <a href="#" class="fz-md d-block py-md-4 py-customer">Terms of use</a>
+            </li>
+            <li>
+            <a href="#" class="fz-md d-block py-md-4 py-customer">Privacy policy</a>
+            </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./assets/js/vendors.js"></script>
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
+    
+    <!--Plugin JavaScript file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <!--SWIPER--> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- self -->
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/formcheck.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- datepicker -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <!--Plugin CSS file with desired skin-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+<body>
+    
+    <header class="container position-relative">
+        <div class="row">
+            <div class="col-12">
+                <div class="customNavbar d-flex align-items-center">
+                    <!-- logo圖 -->
+                    <h1 class="logo m-0 mr-auto">
+                        <a href="index.html" class="hide-text">
+                        ALOHA
+                        </a>
+                    </h1>
+                    <!-- 關閉icon -->
+                    <div class="d-md-none">
+                        <a href="success.html"><i class="fas fa-times"></i></a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="login mt-md-4 mt-lg-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="loginText d-none d-lg-block">
+                        <p class="loginTitle h1 fontRaleway text-dark font-weight-bolder mb-3 ">An ideal hotel makes a wonderful Trip.</p>
+                        <p class="loginDes text-third fz-md">Discover your dream destination and hotel on ALOHA.com</p>
+                    </div>
+                </div>
+                <div class="loginForm col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+                    <h3 class="mb-3 mt-4 mt-md-0">Login</h3>
+                    <form class="reserve" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" name="loginEmail" class="form-control" id="loginEmail" aria-describedby="loginEmailHelp" required>
+                            <div id="erro_loginEmail"></div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" name="loginPassword" class="form-control" id="loginPassword" required>
+                            <div id="erro_loginPassword"></div>
+                        </div>
+                        <p class="fz-sm text-third mb-3">By signing in or creating an account, you agree with our <a href="#" class="text-primary">Terms & Conditions</a> and <a href="#" class="text-primary"> Privacy Statement</a></p>
+                        
+                        <label class="customCheckbox form-check-label  text-third " for="loginCheck">
+                            <input type="checkbox" name="loginCheck" checked="checked" class="customInput form-check-input" id="loginCheck" >
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        
+                        <button id="loginBtn" type="submit" class="reserveBtn btn btn-primary btn-block font-weight-bold mb-2">LOGIN</button>
+                        <!-- <a href="member.html" role="button"  class="btn btn-primary reserveBtn btn-block font-weight-bold mb-2" aria-pressed="true">LOGIN</a> -->
+                        <p class="text-center fz-md">Don’t have an account yet? <a href="signup.html" class="text-primary font-weight-bold">Sign up</a></p>
+                    </form>
+                </div>
+            </div>
+            <!-- 背景圖 -->
+            <div class="row">
+                <div class="loginBg col-lg-7">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/vendors.js"></script>
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
+    
+    <!--Plugin JavaScript file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <!--SWIPER--> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- self -->
+    <script src="./assets/js/all.js"></script>
+    <script src="./assets/js/formcheck.js"></script>
+  </body>
+
+</html>
