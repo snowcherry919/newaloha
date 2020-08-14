@@ -1,22 +1,37 @@
-// let data;
+let data;
 // let roomData;
 // let xhr = new XMLHttpRequest();
-// xhr.open('get','https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json',true);
+// xhr.open('get', 'https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json', true);
 // xhr.send(null);
-// xhr.onload = function(){
-//     data = JSON.parse( xhr.responseText);
-//     roomData=data.room;
-//     console.log(roomData);//撈出房間的json資料
-    
-    
+// xhr.onload = function () {
+//     data = JSON.parse(xhr.responseText);
+//     roomData = data.room;
+//     console.log(roomData); //撈出房間的json資料
+
+
 
 // };
 
 //使用fetch撈取房間遠端資料
-const url ='https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json';
+const url = 'https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json';
 
-
-fetch(url) 
+// async function getRoomData() {
+//     await fetch(url)
+//         .then(res => {
+//             return res.json();
+//         })
+//         .then(result => {
+//             // console.log(result);
+//             let roomData = result.room;
+//             console.log(roomData);
+//             //渲染畫面
+//             dataRender(roomData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//         })
+// };
+fetch(url)
     .then(res => {
         return res.json();
     })
@@ -30,7 +45,7 @@ fetch(url)
     .catch(err => {
         console.log(err);
     })
-        
+
 
 
 const roomCard = document.querySelector('.roomCard');
@@ -38,22 +53,22 @@ const roomCard = document.querySelector('.roomCard');
 
 
 //渲染星等
-function startIcon(num){
-    if (num == 1){
+function startIcon(num) {
+    if (num == 1) {
         return `<i class="fas fa-star"></i>`
-    }else if (num == 2){
+    } else if (num == 2) {
         return `<i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>`
-    }else if (num==3){
+    } else if (num == 3) {
         return `<i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>`
-    }else if(num==4){
+    } else if (num == 4) {
         return `<i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>`
-    }else if (num ==5){
+    } else if (num == 5) {
         return `<i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -63,9 +78,9 @@ function startIcon(num){
 }
 
 //將資料塞入畫面
-function dataRender(roomData){
-    const roomCardContent = roomData.map(item => 
-`
+function dataRender(roomData) {
+    const roomCardContent = roomData.map(item =>
+        `
 <div class="roomCard card">
     <div class="row no-gutters my-md-3 my-lg-4 flex-xl-nowrap ">
        
@@ -82,7 +97,7 @@ function dataRender(roomData){
                             ${item.distanceFromCenter}
                             </span>
                         </p>
-                        <h6 class="card-title fontRaleway font-weight-bold mb-1 mb-md-0  fz-lg-h4 ">${item.hotelName}</h6>
+                        <h6 class = "card-title fontRaleway font-weight-bold mb-1 mb-md-0 fz-lg-h4"><a href="detail.html"> ${item.hotelName}</a></h6>
                     </div>
                     <div>
                         <p class=" mb-1 mb-md-0 start fz-sm fz-lg-md">
@@ -126,6 +141,5 @@ function dataRender(roomData){
         </div>
     </div>
 </div>`).join('');
-    roomCard.innerHTML=roomCardContent;
+    roomCard.innerHTML = roomCardContent;
 };
-    

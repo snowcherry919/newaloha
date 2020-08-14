@@ -1,50 +1,64 @@
-.reserve{
-    input[type=text],input[type=email],input[type=phone],input[type=password]{
+.reserve {
+
+    input[type=text],
+    input[type=email],
+    input[type=phone],
+    input[type=password] {
         padding: 8px 16px;
-        border:1px solid $white2;
+        border: 1px solid $white2;
         height: 56px;
-       
+
     }
 
 
-    .reserveBtn{
+    .reserveBtn {
         font-size: 16px;
         padding: 17px 0;
         // border:0;
-        border-radius:4px;
+        border-radius: 4px;
         height: 56px;
-       
-        
+
+
     }
 
 }
-.reserve--Bg{
+
+.reserve--Bg {
     background: $primary-light;
-    @include media-breakpoint-up(md){
+
+    @include media-breakpoint-up(md) {
         background: transparent;
     }
 }
 
 // 箭頭旋轉
-.rotate{
+.rotate {
     transform: rotate(0deg);
     transition: all .5s;
-    &.active{
+
+    &.active {
         transform: rotate(180deg);
     }
 }
 
-.reserveControl{
-    .reservePrice{
+.reserveControl {
+    .reservePrice {
         display: none;
     }
-    .reserveDetail{
+
+    .reserveDetail {
         margin-left: auto;
     }
-} 
-.reserveControl.collapsed{
-    .reservePrice{
+}
+
+.reserveControl.collapsed {
+    .reservePrice {
         display: block;
-        
+    }
+}
+
+.fixed-bottom .reserve-pos {
+    @include media-breakpoint-up(md) {
+        position: absolute;
     }
 }

@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const ghPages = require('gulp-gh-pages');
 const $ = require('gulp-load-plugins')({ lazy: false });
 const autoprefixer = require('autoprefixer');
 const minimist = require('minimist');
@@ -97,7 +98,7 @@ function clean() {
 }
 
 function deploy() {
-  return gulp.src(envOptions.deploySrc)
+  return gulp.src('./dist/**/*')
     .pipe($.ghPages());
 }
 
