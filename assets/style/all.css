@@ -13880,7 +13880,10 @@ input[type=email] {
   }
 }
 
-.reserve input[type=text], .reserve input[type=email], .reserve input[type=phone], .reserve input[type=password] {
+.reserve input[type=text],
+.reserve input[type=email],
+.reserve input[type=phone],
+.reserve input[type=password] {
   padding: 8px 16px;
   border: 1px solid rgba(0, 0, 0, 0.38);
   height: 56px;
@@ -13928,6 +13931,12 @@ input[type=email] {
 
 .reserveControl.collapsed .reservePrice {
   display: block;
+}
+
+@media (min-width: 768px) {
+  .fixed-bottom .reserve-pos {
+    position: absolute;
+  }
 }
 
 .successTable .table th {

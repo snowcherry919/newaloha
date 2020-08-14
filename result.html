@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Booking Result</title>
-    <!-- datepicker -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-   
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <!--Plugin CSS file with desired skin-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- self -->
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Booking Result</title>
+  <!-- datepicker -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-  <body>
-    
-    <header class="container ">
-      <div class="row">
-        <div class="col-12 ">
-          <div class="customNavbar d-flex align-items-center ">
-            <!-- 選單 bar -->
-            <input type="checkbox" id="menuControl">
-            <label for="menuControl" class="menuBtn mb-0 d-md-none mr-auto">
-              <i class="fas fa-bars "></i>
-            </label>
-            <!-- logo圖 -->
-            <h1 class="m-0 mr-auto logo">
-              <a href="index.html" class="hide-text">
-                ALOHA
-              </a>
-            </h1>
-            <!-- 手機版右側的login -->
-            <ul class="m-0 p-0 d-md-none">
-              <li class="list-unstyled">
-                <a href="login.html" class="text-dark fontRoboto text-decoration-none">Login</a>
-              </li>
-            </ul>
-            <!-- 選單 -->
-            <nav class="siderList ml-auto ">
-              <ul class="list-unstyled d-md-flex align-items-center mb-0">
-                <li>
-                    <!-- <a href="#" class="siderLink fontRoboto text-decoration-none ">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <!--Plugin CSS file with desired skin-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- google font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- self -->
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body onload="showUserSelect()">
+
+  <header class="container ">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="customNavbar d-flex align-items-center ">
+          <!-- 選單 bar -->
+          <input type="checkbox" id="menuControl">
+          <label for="menuControl" class="menuBtn mb-0 d-md-none mr-auto">
+            <i class="fas fa-bars "></i>
+          </label>
+          <!-- logo圖 -->
+          <h1 class="m-0 mr-auto logo">
+            <a href="index.html" class="hide-text">
+              ALOHA
+            </a>
+          </h1>
+          <!-- 手機版右側的login -->
+          <ul class="m-0 p-0 d-md-none">
+            <li class="list-unstyled">
+              <a href="login.html" class="text-dark fontRoboto text-decoration-none">Login</a>
+            </li>
+          </ul>
+          <!-- 選單 -->
+          <nav class="siderList ml-auto ">
+            <ul class="list-unstyled d-md-flex align-items-center mb-0">
+              <li>
+                <!-- <a href="#" class="siderLink fontRoboto text-decoration-none ">
                       <i class="fas fa-globe "></i>
                     </a> -->
-                  <div class="dropdown">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-globe "></i>
-                      </a>
-                    
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">繁體中文</a>
-                        <a class="dropdown-item" href="#">English</a>
-                        <a class="dropdown-item" href="#">日文</a>
-                      </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="signup.html" class="siderLink  fontRoboto text-decoration-none  ">Sign up</a> 
-                </li>
-                <li class="siderLinkLogin ">
-                    <a href="login.html" class="siderLink   fontRoboto text-decoration-none ">Login</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-globe "></i>
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">繁體中文</a>
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">日文</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="signup.html" class="siderLink  fontRoboto text-decoration-none  ">Sign up</a>
+              </li>
+              <li class="siderLinkLogin ">
+                <a href="login.html" class="siderLink   fontRoboto text-decoration-none ">Login</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- 搜尋面板 -->
+  <!-- 搜尋面板 -->
 
 <section class="bg-primary-light mb-4">
     <div class="container">
@@ -85,21 +89,23 @@
             <div class="col-12">
                 <div class="resultSearchControl py-3 d-md-flex">
                     <div class="dropdown mb-3 mr-md-3 mb-md-0 flex-fill">
-                        <button type="button" class="btn text-left text-third btnWd fontOpenSans border-0" id="serchBar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                        <button type="button"
+                            class="js-resultLocation btn text-left text-third btnWd fontOpenSans border-0" id="serchBar"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
                             <i class="fas fa-map-marker-alt mr-3 text-dark"></i>Destination
                         </button>
-                        <div class="location dropdown-menu customDropDown" aria-labelledby="serchBar" id="location">
-                            <a class="dropdown-item" href="#" ok">
+                        <div class="location  dropdown-menu customDropDown" aria-labelledby="serchBar" id="location">
+                            <a class="dropdown-item" href="#">
                                 <i class="fas fa-star"></i>
                                 Bangkok <br>
                                 <small class="city text-third">Thailand</small>
                             </a>
-                            <a class="dropdown-item" href="#" >
+                            <a class="dropdown-item" href="#">
                                 <i class="fas fa-star"></i>
                                 Osaka <br>
                                 <small class="city text-third">Japan</small>
                             </a>
-                            <a class="dropdown-item" href="#" >
+                            <a class="dropdown-item" href="#">
                                 <i class="fas fa-star"></i>
                                 Roma <br>
                                 <small class="city text-third">Italy</small>
@@ -109,7 +115,7 @@
                                 Paris <br>
                                 <small class="city text-third ">London</small>
                             </a>
-                            <a class="dropdown-item" href="#" >
+                            <a class="dropdown-item" href="#">
                                 <i class="fas fa-star"></i>
                                 Reykjavik <br>
                                 <small class="city text-third ">Iceland</small>
@@ -117,48 +123,48 @@
                         </div>
                     </div>
 
-                    
+
                     <!-- 時間選取 -->
                     <div class="dropdown mb-3 mr-md-3 mb-md-0 flex-fill ">
-                    <div id="reportrange" class="reportrange btnWd">
-                        <i class="fa fa-calendar-alt"></i>&nbsp;
-                        <span class="text-third">Check-in / Check-out</span> 
-                    </div>
+                        <div id="reportrange" class="reportrange btnWd">
+                            <i class="fa fa-calendar-alt"></i>&nbsp;
+                            <span class="text-third">Check-in / Check-out</span>
+                        </div>
                     </div>
 
                     <div class="dropdown  mb-3 mr-md-3 mb-md-0 flex-fill">
-                    <button type="button" class="btn text-left text-third  btnWd fontOpenSans border-0 " id="dropdownGuests" >
-                        <i class="fas fa-user-alt mr-3 text-dark"></i>
-                        Guests
-                    </button>
-                    <div class="roomCount dropdown-menu" id="roomCount" 
-                        >
-                        <!-- adult -->
-                        <div <div class="dropdown-item">
-                            <span>Adult</span>
-                            <button class="btn js-btn" id="adultDel"><i class="fas fa-minus"></i></button>
-                            <span id="adultNum">2</span>
-                            <button class="btn js-btn" id="adultPlus"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="js-guests btn text-left text-third  btnWd fontOpenSans border-0 "
+                            id="dropdownGuests">
+                            <i class="fas fa-user-alt mr-3 text-dark"></i>
+                            Guests
+                        </button>
+                        <div class="roomCount dropdown-menu" id="roomCount">
+                            <!-- adult -->
+                            <div <div class="dropdown-item">
+                                <span>Adult</span>
+                                <button class="btn js-btn" id="adultDel"><i class="fas fa-minus"></i></button>
+                                <span id="adultNum">2</span>
+                                <button class="btn js-btn" id="adultPlus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <!-- child -->
+                            <div class="dropdown-item">
+                                <span>Child</span>
+                                <button class="btn js-btn" id="childDel"><i class="fas fa-minus"></i></button>
+                                <span id="childNum">0</span>
+                                <button class="btn js-btn" id="childPlus"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <!-- room -->
+                            <div class="dropdown-item">
+                                <span>Room</span>
+                                <button class="btn js-btn" id="roomDel"><i class="fas fa-minus"></i></button>
+                                <span id="roomNum">1</span>
+                                <button class="btn js-btn" id="roomPlus"><i class="fas fa-plus"></i></button>
+                            </div>
                         </div>
-                        <!-- child -->
-                        <div class="dropdown-item">
-                            <span>Child</span>
-                            <button class="btn js-btn" id="childDel"><i class="fas fa-minus"></i></button>
-                            <span id="childNum">0</span>
-                            <button class="btn js-btn" id="childPlus"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <!-- room -->
-                        <div class="dropdown-item">
-                            <span>Room</span>
-                            <button class="btn js-btn" id="roomDel"><i class="fas fa-minus"></i></button>
-                            <span id="roomNum">1</span>
-                            <button class="btn js-btn" id="roomPlus"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
                     </div>
                     <!-- search按鈕 -->
                     <button type="button" class="btn btn-primary btn-lg font-weight-bold btn-block" id="js-serchBtn">
-                    SEARCH
+                        SEARCH
                     </button>
                 </div>
             </div>
@@ -170,209 +176,220 @@
     <div class="row">
         <div class="col-12 col-md-4">
             <!-- 標題 -->
-            <h3 class="text-center text-md-left fontRaleway font-weight-bold mb-2 mb-md-4 ">Bangkok <sup class="text-primary">3,240</sup>
+            <h3 class="text-center text-md-left fontRaleway font-weight-bold mb-2 mb-md-4 ">Bangkok <sup
+                    class="text-primary">3,240</sup>
             </h3>
             <!-- filter -->
             <div class="roomFilter d-flex mb-2 d-md-none">
-                <a class="btn btn-white fz-md font-weight-bold text-secondary w-50 border-right " href="#" role="button" data-toggle="modal" data-target="#staticBackdrop">
+                <a class="btn btn-white fz-md font-weight-bold text-secondary w-50 border-right " href="#" role="button"
+                    data-toggle="modal" data-target="#staticBackdrop">
                     <i class="fas fa-filter mr-2"></i>
-                        FILTER
+                    FILTER
                 </a>
                 <!-- sort -->
                 <div class="sortDropDown btn-group w-50">
-            
-                    <a href="#" role="button"  class="btn btn-white fz-md font-weight-bold text-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <a href="#" role="button" class="btn btn-white fz-md font-weight-bold text-secondary"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-sort-amount-down mr-2"></i> SORT
                     </a>
                     <div class=" dropdown-menu  dropdown-menu-right bg-primary-light">
-                        <button class="dropdown-item text-primary font-weight-bold py-2" type="button">Recommended</button>
+                        <button class="dropdown-item text-primary font-weight-bold py-2"
+                            type="button">Recommended</button>
                         <button class="dropdown-item font-weight-bold py-2" type="button">Lowest Price</button>
                         <button class="dropdown-item font-weight-bold py-2" type="button">Best value</button>
-                        <button class="dropdown-item font-weight-bold py-2" type="button">Distance to City Center</button>
+                        <button class="dropdown-item font-weight-bold py-2" type="button">Distance to City
+                            Center</button>
                     </div>
                 </div>
             </div>
             <ul class="card text-secondary bg-primary-light list-unstyled p-4 d-none d-md-block">
-                    <li class="card-body pb-4 border-bottom border-white mb-4">
-                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Deals</h6>
-                        <ul class="list-unstyled fz-md fz-lg-h6">
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="freeCancel">
-                                <label class="custom-control-label text-third" for="freeCancel">Free cancellation</label>
-                            </li>
-                            
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="noPrepayment">
-                                <label class="custom-control-label text-third" for="noPrepayment">No prepayment</label>
-                            </li>
+                <li class="card-body pb-4 border-bottom border-white mb-4">
+                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Deals</h6>
+                    <ul class="list-unstyled fz-md fz-lg-h6">
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="freeCancel">
+                            <label class="custom-control-label text-third" for="freeCancel">Free cancellation</label>
+                        </li>
 
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="specialOffers">
-                                <label class="custom-control-label text-third" for="specialOffers">Special offers</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- 第二層li popular filter -->
-                    <li class="card-body pb-4 border-bottom border-white mb-4">
-                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Popular filter</h6>
-                        <ul class="list-unstyled fz-md fz-lg-h6">
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="breakfast">
-                                <label class="custom-control-label text-third" for="breakfast">Breakfast included</label>
-                            </li>
-                            
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="wifi">
-                                <label class="custom-control-label text-third" for="wifi">Free Wi-Fi</label>
-                            </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="noPrepayment">
+                            <label class="custom-control-label text-third" for="noPrepayment">No prepayment</label>
+                        </li>
 
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="swim">
-                                <label class="custom-control-label text-third" for="swim">Swimming pool</label>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- 第三層li budget -->
-                    <li class="card-body pb-4 border-bottom border-white mb-4">
-                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Budget</h6>
-                        <!-- range-slider -->
-                        <input type="text" class="js-range-slider" name="my_range" value="" 
-                        />
-                        <div class="btn-group d-flex align-items-center" role="group" aria-label="Basic example">
-                            <button type="button" class="priceBtn1 btn p-2 fz-sm font-weight-bold border-0 w-50">Min price<br>
-                                <span class="text-third">TWD </span><input type="text" class="js-input-from text-third border-0 w-50 text-center" value="0"/>
-                            </button>
-                            <span class="p-2"> - </span>
-                            <button type="button" class="priceBtn2 btn p-2 fz-sm font-weight-bold border-0 w-50">Max price<br>
-                                <span class="text-third">TWD</span>
-                                <input type="text" class="js-input-to text-third border-0 w-50 " value="0" />
-                            </button>
-                        </div>
-                    </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="specialOffers">
+                            <label class="custom-control-label text-third" for="specialOffers">Special offers</label>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 第二層li popular filter -->
+                <li class="card-body pb-4 border-bottom border-white mb-4">
+                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Popular filter</h6>
+                    <ul class="list-unstyled fz-md fz-lg-h6">
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="breakfast">
+                            <label class="custom-control-label text-third" for="breakfast">Breakfast included</label>
+                        </li>
 
-                    <!-- Rating 單選checkbox-->
-                    <li class="card-body pb-4 border-bottom border-white mb-4">
-                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Rating</h6>
-                        <!-- 第二層 ul -->
-                        <ul class="list-unstyled fz-md fz-lg-h6">
-                            <!-- 第二層li -->
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating5" >
-                                <label class="custom-control-label text-third" for="rating5">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>5.0</span>
-                                </label>
-                            </li>
-                            
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating4" >
-                                <label class="custom-control-label text-third" for="rating4">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>4.0</span>
-                                </label>
-                            </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="wifi">
+                            <label class="custom-control-label text-third" for="wifi">Free Wi-Fi</label>
+                        </li>
 
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating3">
-                                <label class="custom-control-label text-third" for="rating3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>3.0</span>
-                                </label>
-                            </li>
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating2">
-                                <label class="custom-control-label text-third" for="rating2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>2.0</span>
-                                </label>
-                            </li>
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating1">
-                                <label class="custom-control-label text-third" for="rating1">
-                                    <i class="fas fa-star"></i>
-                                    <span>1.0</span>
-                                </label>
-                            </li>
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rating0">
-                                <label class="custom-control-label text-third" for="rating0">
-                                    <span>Unrated</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- Stay type -->
-                    <li class="card-body">
-                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Stay Type</h6>
-                        <ul class="list-unstyled fz-md fz-lg-h6">
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="Hotel">
-                                <label class="custom-control-label text-third" for="Hotel">Hotel</label>
-                            </li>
-                            
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="Apartment">
-                                <label class="custom-control-label text-third" for="Apartment">Apartment</label>
-                            </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="swim">
+                            <label class="custom-control-label text-third" for="swim">Swimming pool</label>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 第三層li budget -->
+                <li class="card-body pb-4 border-bottom border-white mb-4">
+                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Budget</h6>
+                    <!-- range-slider -->
+                    <input type="text" class="js-range-slider" name="my_range" value="" />
+                    <div class="btn-group d-flex align-items-center" role="group" aria-label="Basic example">
+                        <button type="button" class="priceBtn1 btn p-2 fz-sm font-weight-bold border-0 w-50">Min
+                            price<br>
+                            <span class="text-third">TWD </span><input type="text"
+                                class="js-input-from text-third border-0 w-50 text-center" value="0" />
+                        </button>
+                        <span class="p-2"> - </span>
+                        <button type="button" class="priceBtn2 btn p-2 fz-sm font-weight-bold border-0 w-50">Max
+                            price<br>
+                            <span class="text-third">TWD</span>
+                            <input type="text" class="js-input-to text-third border-0 w-50 " value="0" />
+                        </button>
+                    </div>
+                </li>
 
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="Unique">
-                                <label class="custom-control-label text-third" for="Unique">Unique</label>
-                            </li>
-                            <li class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="Hostel">
-                                <label class="custom-control-label text-third" for="Hostel">Hostel</label>
-                            </li>
-                        </ul>
-                    </li>
+                <!-- Rating 單選checkbox-->
+                <li class="card-body pb-4 border-bottom border-white mb-4">
+                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Rating</h6>
+                    <!-- 第二層 ul -->
+                    <ul class="list-unstyled fz-md fz-lg-h6">
+                        <!-- 第二層li -->
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating5">
+                            <label class="custom-control-label text-third" for="rating5">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating4">
+                            <label class="custom-control-label text-third" for="rating4">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.0</span>
+                            </label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating3">
+                            <label class="custom-control-label text-third" for="rating3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>3.0</span>
+                            </label>
+                        </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating2">
+                            <label class="custom-control-label text-third" for="rating2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>2.0</span>
+                            </label>
+                        </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating1">
+                            <label class="custom-control-label text-third" for="rating1">
+                                <i class="fas fa-star"></i>
+                                <span>1.0</span>
+                            </label>
+                        </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rating0">
+                            <label class="custom-control-label text-third" for="rating0">
+                                <span>Unrated</span>
+                            </label>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Stay type -->
+                <li class="card-body">
+                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Stay Type</h6>
+                    <ul class="list-unstyled fz-md fz-lg-h6">
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Hotel">
+                            <label class="custom-control-label text-third" for="Hotel">Hotel</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Apartment">
+                            <label class="custom-control-label text-third" for="Apartment">Apartment</label>
+                        </li>
+
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unique">
+                            <label class="custom-control-label text-third" for="Unique">Unique</label>
+                        </li>
+                        <li class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Hostel">
+                            <label class="custom-control-label text-third" for="Hostel">Hostel</label>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- recommended -->
         <div class="col-12 col-md-8">
-            
+
             <!-- 頁籤 -->
 
             <div class="recommendedCard card mb-3 mb-lg-4">
                 <div class="card-header bg-white p-0 ">
                     <ul class="nav nav-tabs card-header-tabs  bg-white m-0 mb-4 d-none   d-md-flex flex-md-nowrap">
                         <li class="nav-item ">
-                            <a class="nav-link active text-primary font-weight-bold mb-0 border-0 mr-md-2 mr-lg-4  px-0 " href="#">Recommended</a>
+                            <a class="nav-link active text-primary font-weight-bold mb-0 border-0 mr-md-2 mr-lg-4  px-0 "
+                                href="#">Recommended</a>
                         </li>
                         <li class="nav-item  text-nowrap">
-                            <a class="nav-link text-secondary font-weight-bold mb-0  border-0 mr-md-2 mr-lg-4  px-0" href="#">Lowest Price</a>
+                            <a class="nav-link text-secondary font-weight-bold mb-0  border-0 mr-md-2 mr-lg-4  px-0"
+                                href="#">Lowest Price</a>
                         </li>
                         <li class="nav-item text-nowrap">
-                            <a class="nav-link text-secondary font-weight-bold mb-0 border-0 mr-md-2 mr-lg-4  px-0" href="#" tabindex="-1" aria-disabled="true">Best value</a>
+                            <a class="nav-link text-secondary font-weight-bold mb-0 border-0 mr-md-2 mr-lg-4  px-0"
+                                href="#" tabindex="-1" aria-disabled="true">Best value</a>
                         </li>
                         <li class="nav-item text-nowrap">
-                            <a class="nav-link text-secondary font-weight-bold mb-0 border-0 px-0" href="#" tabindex="-1" aria-disabled="true">Distance to City Center</a>
+                            <a class="nav-link text-secondary font-weight-bold mb-0 border-0 px-0" href="#"
+                                tabindex="-1" aria-disabled="true">Distance to City Center</a>
                         </li>
                     </ul>
                 </div>
                 <!-- card1 -->
-                <div class="roomCard card" >
-                   
+                <div class="roomCard card">
+
                 </div>
-               
+
             </div>
             <!-- 分頁 -->
             <nav class="bg-primary-light  rounded-lg p-3 mb-7 mb-lg-9" aria-label="Page navigation example">
                 <ul class="pagination mb-0 justify-content-between">
                     <li class="page-item">
-                    <a class="btn btn-outline-primary" href="#" aria-label="Previous">
-                        <span  class="d-lg-none" aria-hidden="true">&laquo;</span>
-                        <span class="d-none d-lg-block" >Previous</span>
-                    </a>
+                        <a class="btn btn-outline-primary" href="#" aria-label="Previous">
+                            <span class="d-lg-none" aria-hidden="true">&laquo;</span>
+                            <span class="d-none d-lg-block">Previous</span>
+                        </a>
                     </li>
                     <li class="page-item  active"><a class="page-link font-weight-bold ml-0" href="#">1</a></li>
                     <li class="page-item"><a class="page-link font-weight-bold" href="#">2</a></li>
@@ -384,9 +401,9 @@
                     <li class="page-item"><a class="page-link font-weight-bold" href="#">8</a></li>
                     <li class="page-item"><a class="page-link font-weight-bold" href="#">9</a></li>
                     <li class="page-item">
-                        <a class="btn btn-primary font-weight-bold" href="#"  aria-label="Next">
-                        <span class="d-none d-lg-block">Next</span>
-                        <span class="d-lg-none" aria-hidden="true">&raquo;</span>
+                        <a class="btn btn-primary font-weight-bold" href="#" aria-label="Next">
+                            <span class="d-none d-lg-block">Next</span>
+                            <span class="d-lg-none" aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                     <!-- <li class="page-item d-lg-none">
@@ -400,8 +417,8 @@
     </div>
 </section>
 
-            
-                <!-- <div class="subScribe d-flex flex-wrap justify-content-center">
+
+<!-- <div class="subScribe d-flex flex-wrap justify-content-center">
                 <p class="h4 fz-lg-h3 fontRaleway font-weight-bold">Subscribe for Exclusive Offer</p>
                 
                 <div class="inputGroup d-flex justify-content-lg-center">
@@ -409,288 +426,300 @@
                     <button class="subBtn font-weight-bold">SUBSCRIBE</button>
                 </div>
                 </div>    -->
-            <!-- </div> -->
-        <!-- </div>
+<!-- </div> -->
+<!-- </div>
         </div>
     </div>
 </section>  -->
 <!--filter  modal -->
 <div class="filterModal modal-dialog modal-dialog-scrollable m-0">
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header border-0">
-                <h5 class="modal-title" id="staticBackdropLabel">
-                <i class="fas fa-filter mr-2"></i>
-                FILTER
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container bg-primary-light">
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="card text-secondary  list-unstyled py-4 bg-primary-light">
-                                <li class="card-body pb-4 border-bottom border-white mb-4">
-                                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Deals</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="freeCancel">
-                                            <label class="custom-control-label text-third" for="freeCancel">Free cancellation</label>
-                                        </li>
-                                        
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="noPrepayment">
-                                            <label class="custom-control-label text-third" for="noPrepayment">No prepayment</label>
-                                        </li>
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="staticBackdropLabel">
+                        <i class="fas fa-filter mr-2"></i>
+                        FILTER
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container bg-primary-light">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="card text-secondary  list-unstyled py-4 bg-primary-light">
+                                    <li class="card-body pb-4 border-bottom border-white mb-4">
+                                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Deals</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="freeCancel">
+                                                <label class="custom-control-label text-third" for="freeCancel">Free
+                                                    cancellation</label>
+                                            </li>
 
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="specialOffers">
-                                            <label class="custom-control-label text-third" for="specialOffers">Special offers</label>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!-- 第二層li popular filter -->
-                                <li class="card-body pb-4 border-bottom border-white mb-4">
-                                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Popular filter</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="breakfast">
-                                            <label class="custom-control-label text-third" for="breakfast">Breakfast included</label>
-                                        </li>
-                                        
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="wifi">
-                                            <label class="custom-control-label text-third" for="wifi">Free Wi-Fi</label>
-                                        </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="noPrepayment">
+                                                <label class="custom-control-label text-third" for="noPrepayment">No
+                                                    prepayment</label>
+                                            </li>
 
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="swim">
-                                            <label class="custom-control-label text-third" for="swim">Swimming pool</label>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!-- 第三層li budget -->
-                                <li class="card-body pb-4 border-bottom border-white mb-4">
-                                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Budget</h6>
-                                    <!-- range-slider -->
-                                    <input type="text" class="js-range-slider" name="my_range" value="" 
-                                    />
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <button type="button" class="priceBtn1 btn p-2 fz-sm font-weight-bold border-0">Min price
-                                            <input type="text" class="js-input-from text-third" value="0" />
-                                        </button>
-                                        <button type="button" class="priceBtn2 btn p-2 fz-sm font-weight-bold border-0">Max price
-                                            <input type="text" class="js-input-to text-third" value="0" />
-                                        </button>
-                                    </div>
-                                </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="specialOffers">
+                                                <label class="custom-control-label text-third"
+                                                    for="specialOffers">Special offers</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- 第二層li popular filter -->
+                                    <li class="card-body pb-4 border-bottom border-white mb-4">
+                                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Popular filter</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="breakfast">
+                                                <label class="custom-control-label text-third" for="breakfast">Breakfast
+                                                    included</label>
+                                            </li>
 
-                                <!-- Rating 單選checkbox-->
-                                <li class="card-body pb-4 border-bottom border-white mb-4">
-                                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Rating</h6>
-                                    <!-- 第二層 ul -->
-                                    <ul class="list-unstyled">
-                                        <!-- 第二層li -->
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating5" >
-                                            <label class="custom-control-label text-third" for="rating5">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span>5.0</span>
-                                            </label>
-                                        </li>
-                                        
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating4" >
-                                            <label class="custom-control-label text-third" for="rating4">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span>4.0</span>
-                                            </label>
-                                        </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="wifi">
+                                                <label class="custom-control-label text-third" for="wifi">Free
+                                                    Wi-Fi</label>
+                                            </li>
 
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating3">
-                                            <label class="custom-control-label text-third" for="rating3">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span>3.0</span>
-                                            </label>
-                                        </li>
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating2">
-                                            <label class="custom-control-label text-third" for="rating2">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span>2.0</span>
-                                            </label>
-                                        </li>
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating1">
-                                            <label class="custom-control-label text-third" for="rating1">
-                                                <i class="fas fa-star"></i>
-                                                <span>1.0</span>
-                                            </label>
-                                        </li>
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="rating0">
-                                            <label class="custom-control-label text-third" for="rating0">
-                                                <span>Unrated</span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <!-- Stay type -->
-                                <li class="card-body">
-                                    <h6 class="card-title fontOpenSans font-weight-bold mb-3">Stay Type</h6>
-                                    <ul class="list-unstyled">
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Hotel">
-                                            <label class="custom-control-label text-third" for="Hotel">Hotel</label>
-                                        </li>
-                                        
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Apartment">
-                                            <label class="custom-control-label text-third" for="Apartment">Apartment</label>
-                                        </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="swim">
+                                                <label class="custom-control-label text-third" for="swim">Swimming
+                                                    pool</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- 第三層li budget -->
+                                    <li class="card-body pb-4 border-bottom border-white mb-4">
+                                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Budget</h6>
+                                        <!-- range-slider -->
+                                        <input type="text" class="js-range-slider" name="my_range" value="" />
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button"
+                                                class="priceBtn1 btn p-2 fz-sm font-weight-bold border-0">Min price
+                                                <input type="text" class="js-input-from text-third" value="0" />
+                                            </button>
+                                            <button type="button"
+                                                class="priceBtn2 btn p-2 fz-sm font-weight-bold border-0">Max price
+                                                <input type="text" class="js-input-to text-third" value="0" />
+                                            </button>
+                                        </div>
+                                    </li>
 
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Unique">
-                                            <label class="custom-control-label text-third" for="Unique">Unique</label>
-                                        </li>
-                                        <li class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="Hostel">
-                                            <label class="custom-control-label text-third" for="Hostel">Hostel</label>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul> 
+                                    <!-- Rating 單選checkbox-->
+                                    <li class="card-body pb-4 border-bottom border-white mb-4">
+                                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Rating</h6>
+                                        <!-- 第二層 ul -->
+                                        <ul class="list-unstyled">
+                                            <!-- 第二層li -->
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating5">
+                                                <label class="custom-control-label text-third" for="rating5">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>5.0</span>
+                                                </label>
+                                            </li>
+
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating4">
+                                                <label class="custom-control-label text-third" for="rating4">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>4.0</span>
+                                                </label>
+                                            </li>
+
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating3">
+                                                <label class="custom-control-label text-third" for="rating3">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>3.0</span>
+                                                </label>
+                                            </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating2">
+                                                <label class="custom-control-label text-third" for="rating2">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <span>2.0</span>
+                                                </label>
+                                            </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating1">
+                                                <label class="custom-control-label text-third" for="rating1">
+                                                    <i class="fas fa-star"></i>
+                                                    <span>1.0</span>
+                                                </label>
+                                            </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="rating0">
+                                                <label class="custom-control-label text-third" for="rating0">
+                                                    <span>Unrated</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- Stay type -->
+                                    <li class="card-body">
+                                        <h6 class="card-title fontOpenSans font-weight-bold mb-3">Stay Type</h6>
+                                        <ul class="list-unstyled">
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="Hotel">
+                                                <label class="custom-control-label text-third" for="Hotel">Hotel</label>
+                                            </li>
+
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="Apartment">
+                                                <label class="custom-control-label text-third"
+                                                    for="Apartment">Apartment</label>
+                                            </li>
+
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="Unique">
+                                                <label class="custom-control-label text-third"
+                                                    for="Unique">Unique</label>
+                                            </li>
+                                            <li class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="Hostel">
+                                                <label class="custom-control-label text-third"
+                                                    for="Hostel">Hostel</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="card-body m-0">
+                        <h4 class="card-title text-white1 fontRaleway text-left mb-0 pb-4">Find 1,245 results</h4>
+                        <div class="filterBtn d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary btn-outline-light font-weight-bold "
+                                data-dismiss="modal">CLEAR</button>
+                            <button type="button" class="btn btn-primary font-weight-bold ">FILTER</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <div class="card-body m-0">
-                    <h4 class="card-title text-white1 fontRaleway text-left mb-0 pb-4">Find 1,245 results</h4>
-                    <div class="filterBtn d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary btn-outline-light font-weight-bold " data-dismiss="modal">CLEAR</button>
-                        <button type="button" class="btn btn-primary font-weight-bold ">FILTER</button>
-                    </div>
-                </div>
-            </div>
-            </div>
         </div>
-    </div>   
+    </div>
 </div>
 
 
-   <!-- subscribe-->
-<section class="subscribe">
-        <div class="bg-primary-light" >
-            <div class="container">            
-            <div class="row align-items-center">
-                <div class="col-12 pt-4 pt-md-0 col-md-4 col-xl-5 ">
-                  <p class="h4 fz-lg-h3 fontRaleway mb-0">Subscribe for Exclusive Offer</p>
-                </div>
-                <div class="col-12 col-md-8 col-xl-7">
-                    <div class="pt-3 pb-4 inputCustom--p py-xl-4 d-flex">
-                        <input type="email" class="inputCustom--w" placeholder="Your email address">
-                        <button class="inputGroupBtn inputGroupBtn--w font-weight-bold ">SUBSCRIBE</button>
-                    </div>
-                </div>
+  <!-- subscribe-->
+  <section class="subscribe">
+    <div class="bg-primary-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 pt-4 pt-md-0 col-md-4 col-xl-5 ">
+            <p class="h4 fz-lg-h3 fontRaleway mb-0">Subscribe for Exclusive Offer</p>
+          </div>
+          <div class="col-12 col-md-8 col-xl-7">
+            <div class="pt-3 pb-4 inputCustom--p py-xl-4 d-flex">
+              <input type="email" class="inputCustom--w" placeholder="Your email address">
+              <button class="inputGroupBtn inputGroupBtn--w font-weight-bold ">SUBSCRIBE</button>
             </div>
-            </div>
-        </div>
-    </section>
-    
-    
-
-    <footer class="container footer fixed-bottom">
-      <div class="row">
-        <div class="col-12 ">
-          <div class="d-flex flex-column-reverse align-items-center flex-md-row fontOpenSans py-4 py-md-0">
-            <!-- 版權宣告 -->
-            <p class="text-third fz-md mb-0 mt-3 mt-md-0 mr-md-auto  mr-lg-8 py-md-4 py-customer ">
-              &copy; 2020 ALOHA, Inc. All rights reserved.
-            </p>
-            <!-- faqs -->
-            <ul class="list-unstyled d-flex justify-content-between mb-0">
-              <li class="pr-4">
-                <a href="#" class="fz-md d-block py-md-4 py-customer">FAQs</a>
-              </li>
-              <li class="pr-4">
-                <a href="#" class="fz-md d-block py-md-4 py-customer">Terms of use</a>
-              </li>
-              <li>
-                <a href="#" class="fz-md d-block py-md-4 py-customer">Privacy policy</a>
-              </li>
-            </ul>
-            <!-- language&price -->
-            <ul
-            class="language list-unstyled d-none d-lg-block d-lg-flex mb-lg-0 ml-lg-auto">
-              <li class="d-lg-flex mr-4 ">
-                <!-- <a href="#" class="d-block mr-2 ">
-                  <i class="fas fa-globe "></i>
-                </a> -->
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-block mr-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-globe "></i>
-                      English
-                    </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">繁體中文</a>
-                      <a class="dropdown-item" href="#">English</a>
-                      <a class="dropdown-item" href="#">日文</a>
-                    </div>
-                  </div>
-                
-              </li>
-
-              <li class="d-lg-flex">
-                  <a href="#" class="d-block mr-2 ">
-                    <i class="fas fa-dollar-sign "></i> 
-                  </a>
-                  <ul class="list-unstyled ">
-                    <li class="d-lg-flex ">
-                      <a href="#">TWD</a>
-                      <!-- 下拉箭頭 -->
-                      <i class="fas fa-sort-down"></i>
-                    </li>
-                    <li>
-                      <a href="#" class="d-none">USA</a>
-                    </li>
-                  </ul>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="./assets/js/vendors.js"></script>
-    <!-- datepicker -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    
-    
-    <!--Plugin JavaScript file-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-    <!--SWIPER--> -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- self -->
-    <script src="./assets/js/all.js"></script>
-  </body>
+
+
+  <footer class="container footer fixed-bottom">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="d-flex flex-column-reverse align-items-center flex-md-row fontOpenSans py-4 py-md-0">
+          <!-- 版權宣告 -->
+          <p class="text-third fz-md mb-0 mt-3 mt-md-0 mr-md-auto  mr-lg-8 py-md-4 py-customer ">
+            &copy; 2020 ALOHA, Inc. All rights reserved.
+          </p>
+          <!-- faqs -->
+          <ul class="list-unstyled d-flex justify-content-between mb-0">
+            <li class="pr-4">
+              <a href="#" class="fz-md d-block py-md-4 py-customer">FAQs</a>
+            </li>
+            <li class="pr-4">
+              <a href="#" class="fz-md d-block py-md-4 py-customer">Terms of use</a>
+            </li>
+            <li>
+              <a href="#" class="fz-md d-block py-md-4 py-customer">Privacy policy</a>
+            </li>
+          </ul>
+          <!-- language&price -->
+          <ul class="language list-unstyled d-none d-lg-block d-lg-flex mb-lg-0 ml-lg-auto">
+            <li class="d-lg-flex mr-4 ">
+              <!-- <a href="#" class="d-block mr-2 ">
+                  <i class="fas fa-globe "></i>
+                </a> -->
+              <div class="dropdown">
+                <a class="dropdown-toggle d-block mr-2" href="#" role="button" id="dropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-globe "></i>
+                  English
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">繁體中文</a>
+                  <a class="dropdown-item" href="#">English</a>
+                  <a class="dropdown-item" href="#">日文</a>
+                </div>
+              </div>
+
+            </li>
+
+            <li class="d-lg-flex">
+              <a href="#" class="d-block mr-2 ">
+                <i class="fas fa-dollar-sign "></i>
+              </a>
+              <ul class="list-unstyled ">
+                <li class="d-lg-flex ">
+                  <a href="#">TWD</a>
+                  <!-- 下拉箭頭 -->
+                  <i class="fas fa-sort-down"></i>
+                </li>
+                <li>
+                  <a href="#" class="d-none">USA</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/vendors.js"></script>
+  <!-- datepicker -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <!--SWIPER-->
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- self -->
+  <script src="./assets/js/all.js"></script>
+</body>
 
 </html>

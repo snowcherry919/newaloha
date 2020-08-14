@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Booking detail</title>
-    <!-- datepicker -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-   
-    <!-- font-awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <!--Plugin CSS file with desired skin-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
-    <!-- swiper -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
-    <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- self -->
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Booking detail</title>
+  <!-- datepicker -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
-  <body>
-    
-    <header class="container ">
-      <div class="row">
-        <div class="col-12 ">
-          <div class="customNavbar d-flex align-items-center ">
-            <!-- 選單 bar -->
-            <input type="checkbox" id="menuControl">
-            <label for="menuControl" class="menuBtn mb-0 d-md-none mr-auto">
-              <i class="fas fa-bars "></i>
-            </label>
-            <!-- logo圖 -->
-            <h1 class="m-0 mr-auto logo">
-              <a href="index.html" class="hide-text">
-                ALOHA
-              </a>
-            </h1>
-            <!-- 手機版右側的login -->
-            <ul class="m-0 p-0 d-md-none">
-              <li class="list-unstyled">
-                <a href="login.html" class="text-dark fontRoboto text-decoration-none">Login</a>
-              </li>
-            </ul>
-            <!-- 選單 -->
-            <nav class="siderList ml-auto ">
-              <ul class="list-unstyled d-md-flex align-items-center mb-0">
-                <li>
-                    <!-- <a href="#" class="siderLink fontRoboto text-decoration-none ">
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <!--Plugin CSS file with desired skin-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- google font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- self -->
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body onload="showUserSelect()">
+
+  <header class="container ">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="customNavbar d-flex align-items-center ">
+          <!-- 選單 bar -->
+          <input type="checkbox" id="menuControl">
+          <label for="menuControl" class="menuBtn mb-0 d-md-none mr-auto">
+            <i class="fas fa-bars "></i>
+          </label>
+          <!-- logo圖 -->
+          <h1 class="m-0 mr-auto logo">
+            <a href="index.html" class="hide-text">
+              ALOHA
+            </a>
+          </h1>
+          <!-- 手機版右側的login -->
+          <ul class="m-0 p-0 d-md-none">
+            <li class="list-unstyled">
+              <a href="login.html" class="text-dark fontRoboto text-decoration-none">Login</a>
+            </li>
+          </ul>
+          <!-- 選單 -->
+          <nav class="siderList ml-auto ">
+            <ul class="list-unstyled d-md-flex align-items-center mb-0">
+              <li>
+                <!-- <a href="#" class="siderLink fontRoboto text-decoration-none ">
                       <i class="fas fa-globe "></i>
                     </a> -->
-                  <div class="dropdown">
-                      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-globe "></i>
-                      </a>
-                    
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">繁體中文</a>
-                        <a class="dropdown-item" href="#">English</a>
-                        <a class="dropdown-item" href="#">日文</a>
-                      </div>
-                    </div>
-                </li>
-                <li>
-                    <a href="signup.html" class="siderLink  fontRoboto text-decoration-none  ">Sign up</a> 
-                </li>
-                <li class="siderLinkLogin ">
-                    <a href="login.html" class="siderLink   fontRoboto text-decoration-none ">Login</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+                <div class="dropdown">
+                  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-globe "></i>
+                  </a>
+
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">繁體中文</a>
+                    <a class="dropdown-item" href="#">English</a>
+                    <a class="dropdown-item" href="#">日文</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a href="signup.html" class="siderLink  fontRoboto text-decoration-none  ">Sign up</a>
+              </li>
+              <li class="siderLinkLogin ">
+                <a href="login.html" class="siderLink   fontRoboto text-decoration-none ">Login</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- 搜尋面板 -->
+  <!-- 搜尋面板 -->
 
 <section class="bg-primary-light mb-4">
     <div class="container">
@@ -85,79 +89,83 @@
             <div class="col-12">
                 <div class="resultSearchControl py-3 d-md-flex d-none">
                     <div class="dropdown mb-3 mr-md-3 mb-md-0 flex-fill ">
-                    <button type="button" class="btn text-left text-third btnWd fontOpenSans border-0 " id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <i class="fas fa-map-marker-alt mr-3 text-dark"></i>Destination
-                    </button>
-                    <div class="dropdown-menu customDropDown" aria-labelledby="dropdownMenuOffset">
-                        <a class="dropdown-item" href="#">
-                        <i class="fas fa-star"></i>
-                            Bangkok <br>
-                            <small class="city text-third ">Thailand</small>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                        <i class="fas fa-star"></i>
-                            Osaka <br>
-                            <small class="city text-third ">Japan</small>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                        <i class="fas fa-star"></i>
-                            Roma <br>
-                            <small class="city text-third ">Italy</small>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                        <i class="fas fa-star"></i>
-                            Paris <br>
-                            <small class="city text-third ">London</small>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                        <i class="fas fa-star"></i>
-                            Reykjavik <br>
-                            <small class="city text-third ">Iceland</small>
-                        </a>
-                    </div>
+                        <button type="button" class="btn text-left text-third btnWd fontOpenSans border-0 "
+                            id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            data-offset="10,20">
+                            <i class="fas fa-map-marker-alt mr-3 text-dark"></i>Destination
+                        </button>
+                        <div class="dropdown-menu customDropDown" aria-labelledby="dropdownMenuOffset">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-star"></i>
+                                Bangkok <br>
+                                <small class="city text-third ">Thailand</small>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-star"></i>
+                                Osaka <br>
+                                <small class="city text-third ">Japan</small>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-star"></i>
+                                Roma <br>
+                                <small class="city text-third ">Italy</small>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-star"></i>
+                                Paris <br>
+                                <small class="city text-third ">London</small>
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-star"></i>
+                                Reykjavik <br>
+                                <small class="city text-third ">Iceland</small>
+                            </a>
+                        </div>
                     </div>
 
-                    
+
                     <!-- 時間選取 -->
                     <div class="dropdown mb-3 mr-md-3 mb-md-0 flex-fill ">
-                    <div id="reportrange" class="reportrange btnWd">
-                        <i class="fa fa-calendar-alt"></i>&nbsp;
-                        <span class="text-third">Check-in / Check-out</span> 
-                    </div>
+                        <div id="reportrange" class="reportrange btnWd">
+                            <i class="fa fa-calendar-alt"></i>&nbsp;
+                            <span class="text-third">Check-in / Check-out</span>
+                        </div>
                     </div>
 
                     <div class="dropdown  mb-3 mr-md-3 mb-md-0 flex-fill ">
-                    <button type="button" class="btn text-left text-third  btnWd fontOpenSans border-0 " id="dropdownGuests" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                        <i class="fas fa-user-alt mr-3 text-dark"></i>
-                        Guests
-                    </button>
-                    <div class="dropdown-menu "  aria-labelledby="dropdownGuests">
-                        <!-- adult -->
-                        <div class="dropdown-item">
-                        <span>Adult</span>
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="adultNum">2</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="btn text-left text-third  btnWd fontOpenSans border-0 "
+                            id="dropdownGuests" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            data-offset="10,20">
+                            <i class="fas fa-user-alt mr-3 text-dark"></i>
+                            Guests
+                        </button>
+                        <div class="dropdown-menu " aria-labelledby="dropdownGuests">
+                            <!-- adult -->
+                            <div class="dropdown-item">
+                                <span>Adult</span>
+                                <button class="btn"><i class="fas fa-minus"></i></button>
+                                <span id="adultNum">2</span>
+                                <button class="btn"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <!-- child -->
+                            <div class="dropdown-item">
+                                <span>Child</span>
+                                <button class="btn"><i class="fas fa-minus"></i></button>
+                                <span id="childNum">0</span>
+                                <button class="btn"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <!-- room -->
+                            <div class="dropdown-item">
+                                <span>Room</span>
+                                <button class="btn"><i class="fas fa-minus"></i></button>
+                                <span id="roomNum">1</span>
+                                <button class="btn"><i class="fas fa-plus"></i></button>
+                            </div>
                         </div>
-                        <!-- child -->
-                        <div class="dropdown-item">
-                        <span>Child</span>
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="childNum">0</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <!-- room -->
-                        <div class="dropdown-item">
-                        <span>Room</span>
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="roomNum">1</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
                     </div>
                     <!-- search按鈕 -->
                     <button type="button" class="btn btn-primary btn-lg font-weight-bold btn-block ">
-                    SEARCH
+                        SEARCH
                     </button>
                 </div>
             </div>
@@ -172,16 +180,20 @@
             <div id="carouselDetail" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" class="d-block w-100 carousel__Img--h" alt="...">
+                        <img src="https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                            class="d-block w-100 carousel__Img--h" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80" class="d-block w-100 carousel__Img--h" alt="...">
+                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80"
+                            class="d-block w-100 carousel__Img--h" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1560920452-da0369e98fe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="d-block w-100 carousel__Img--h" alt="...">
+                        <img src="https://images.unsplash.com/photo-1560920452-da0369e98fe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+                            class="d-block w-100 carousel__Img--h" alt="...">
                     </div>
                     <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1560920174-92abf3b69a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="d-block w-100 carousel__Img--h" alt="...">
+                        <img src="https://images.unsplash.com/photo-1560920174-92abf3b69a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+                            class="d-block w-100 carousel__Img--h" alt="...">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselDetail" role="button" data-slide="prev">
@@ -200,16 +212,24 @@
 <section class="container d-none d-md-block mb-md-4">
     <div class="row">
         <div class="col-md-7 pr-0">
-            <div class="album--h bg-cover rounded mr-md-1 mr-lg-2" style="background-image: url(https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)"></div>
+            <div class="album--h bg-cover rounded mr-md-1 mr-lg-2"
+                style="background-image: url(https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80)">
+            </div>
         </div>
         <div class="col-md-5 album--h pl-0">
-            <div class="albumRT-wh bg-cover rounded mb-md-1 mb-lg-2" style="background-image: url(https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80)"></div>
+            <div class="albumRT-wh bg-cover rounded mb-md-1 mb-lg-2"
+                style="background-image: url(https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1525&q=80)">
+            </div>
             <div class="d-flex ">
-                <div class="albumRBL-wh bg-cover rounded mr-md-1 mr-lg-2" style="background-image: url(https://images.unsplash.com/photo-1560920452-da0369e98fe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)"></div>
+                <div class="albumRBL-wh bg-cover rounded mr-md-1 mr-lg-2"
+                    style="background-image: url(https://images.unsplash.com/photo-1560920452-da0369e98fe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+                </div>
                 <div>
-                    <div class="albumRBR-wh bg-cover rounded mb-1 mb-lg-2" style="background-image: url(https://images.unsplash.com/photo-1560920174-92abf3b69a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+                    <div class="albumRBR-wh bg-cover rounded mb-1 mb-lg-2"
+                        style="background-image: url(https://images.unsplash.com/photo-1560920174-92abf3b69a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
                     </div>
-                    <a name="" id="" class="btn btn-dark customBtn font-weight-bold border-0 w-100" href="#" role="button">See All 10 photos</a>
+                    <a name="" id="" class="btn btn-dark customBtn font-weight-bold border-0 w-100" href="#"
+                        role="button">See All 10 photos</a>
                 </div>
             </div>
         </div>
@@ -228,12 +248,16 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <span class="fz-md text-third">4.0 (283)</span> 
+                            <span class="fz-md text-third">4.0 (283)</span>
                         </p>
                     </div>
-                    <p class="fz-sm text-primary mb-3 fz-md-md mb-md-4">318 Phaya Thai Road, Ratchathewi, Phaya Thai, 10400 Bangkok, Thailand</p>
+                    <p class="fz-sm text-primary mb-3 fz-md-md mb-md-4">318 Phaya Thai Road, Ratchathewi, Phaya Thai,
+                        10400 Bangkok, Thailand</p>
                     <p class="card-text fz-md text-third">
-                        The Rachada Hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser, a refrigerator and other kitchen facilities, upholstered chairs, a flat screen television, and en-suite bathrooms.
+                        The Rachada Hotel is an establishment that provides paid lodging on a short-term basis.
+                        Facilities provided may range from a modest-quality mattress in a small room to large suites
+                        with bigger, higher-quality beds, a dresser, a refrigerator and other kitchen facilities,
+                        upholstered chairs, a flat screen television, and en-suite bathrooms.
                     </p>
                 </div>
             </div>
@@ -268,268 +292,280 @@
             <table class="table table-borderless mb-7">
                 <thead class="customTableHeader">
                     <tr>
-                    <th class="customTableHeader--w font-weight-bold py-md-2"  scope="col">Room Type</th>
-                    <th class="font-weight-bold text-center py-md-2" scope="col">Sleeps</th>
-                    <th class="font-weight-bold text-center py-md-2" scope="col">Price</th>
-                    <th class="font-weight-bold text-center py-md-2" scope="col">Rooms</th>
+                        <th class="customTableHeader--w font-weight-bold py-md-2" scope="col">Room Type</th>
+                        <th class="font-weight-bold text-center py-md-2" scope="col">Sleeps</th>
+                        <th class="font-weight-bold text-center py-md-2" scope="col">Price</th>
+                        <th class="font-weight-bold text-center py-md-2" scope="col">Rooms</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <td class="pb-2 pb-md-0">
-                        <div class="card  customCard--border py-md-4">
-                            <div class="d-flex align-items-center customCard--w">
-                                <div class="roomImg--w">
-                                    <img src="https://images.unsplash.com/photo-1574643014728-053f16745e49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" class="roomImg" alt="...">
+                        <td class="pb-2 pb-md-0">
+                            <div class="card  customCard--border py-md-4">
+                                <div class="d-flex align-items-center customCard--w">
+                                    <div class="roomImg--w">
+                                        <img src="https://images.unsplash.com/photo-1574643014728-053f16745e49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+                                            class="roomImg" alt="...">
+                                    </div>
+                                    <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
+                                        <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Double
+                                            Room A</h6>
+                                        <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
+                                        <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-wifi  mr-2"></i>
+                                                <span class="d-none d-lg-inline"> Wi-Fi</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-tv text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> breakfast</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-utensils text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> television</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="far fa-snowflake text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> air conditioner</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-concierge-bell text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> room service</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-smoking-ban text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> smoke free</span>
+                                            </li>
+
+                                        </ul>
+                                        <p class="mb-0 d-md-none">
+                                            <!-- <span> -->
+                                            <i class="fas fa-user-alt"></i>
+                                            <i class="fas fa-user-alt"></i>
+                                            <!-- </span> -->
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
-                                    <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Double Room A</h6>
-                                    <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
-                                    <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-wifi  mr-2"></i>
-                                            <span class="d-none d-lg-inline"> Wi-Fi</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-tv text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> breakfast</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-utensils text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> television</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="far fa-snowflake text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> air conditioner</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-concierge-bell text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> room service</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-smoking-ban text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> smoke free</span>
-                                        </li>
-                                        
-                                    </ul>
-                                    <p class="mb-0 d-md-none">
-                                        <!-- <span> -->
-                                            <i class="fas fa-user-alt"></i>
-                                            <i class="fas fa-user-alt"></i>
-                                        <!-- </span> -->
+                            </div>
+                            <div
+                                class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
+                                <div class="roomImg--w d-flex justify-content-between">
+                                    <button class="btn">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" min="1" max="99" value="0"
+                                        class="border-0 text-center bg-transparent p-2">
+                                    <button class="btn ">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <del class="text-third fz-md">TWD 1,600</del>
+                                    <p class="font-weight-bold text-primary mb-0">
+                                        <span class="text-dark font-weight-bold">TWD </span>1,490
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
-                            <div class="roomImg--w d-flex justify-content-between">
-                                <button class="btn">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <input type="number" min="1" max="99" value="0" class="border-0 text-center bg-transparent p-2">
-                                <button class="btn ">
-                                    <i class="fas fa-plus"></i>
-                                </button>  
-                            </div>
-                            <div class="text-right">
-                                <del class="text-third fz-md">TWD 1,600</del>
-                                <p class="font-weight-bold text-primary mb-0"> 
+                        </td>
+                        <td class="customTableTd align-middle text-center">
+                            <span>
+                                <i class="fas fa-user-alt"></i>
+                                <i class="fas fa-user-alt"></i>
+                            </span>
+                        </td>
+                        <td class="customTableTd align-middle">
+                            <div class="fontOpenSans text-center">
+                                <del class="text-third fz-md-md">TWD 1,600</del>
+                                <p class="fz-md-h6 font-weight-bold text-primary mb-0">
                                     <span class="text-dark font-weight-bold">TWD </span>1,490
                                 </p>
+                                <p class="text-third fz-md-sm mb-0">per night</p>
                             </div>
-                        </div>
-                    </td>
-                    <td class="customTableTd align-middle text-center">
-                        <span>
-                            <i class="fas fa-user-alt"></i>
-                            <i class="fas fa-user-alt"></i>
-                        </span>
-                    </td>
-                    <td class="customTableTd align-middle">
-                        <div class="fontOpenSans text-center">
-                            <del class="text-third fz-md-md">TWD 1,600</del>
-                            <p class="fz-md-h6 font-weight-bold text-primary mb-0"> 
-                                <span class="text-dark font-weight-bold">TWD </span>1,490
-                            </p>
-                            <p class="text-third fz-md-sm mb-0">per night</p>
-                        </div>
-                    </td>
-                    <td class="customTableTd align-middle text-center">
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="roomDetailNum">0</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
-                    </td>
+                        </td>
+                        <td class="customTableTd align-middle text-center">
+                            <button class="btn"><i class="fas fa-minus"></i></button>
+                            <span id="roomDetailNum">0</span>
+                            <a role="btn" class="btn" href="reserve.html"><i class="fas fa-plus"></i></a>
+                        </td>
                     </tr>
                     <tr>
-                    <th class="pb-2 pb-md-0"> 
-                        <div class="card  customCard--border py-md-4">
-                            <div class="d-flex align-items-center customCard--w">
-                                <div class="roomImg--w">
-                                    <img src="https://images.unsplash.com/photo-1583845112203-29329902332e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="roomImg" alt="...">
+                        <th class="pb-2 pb-md-0">
+                            <div class="card  customCard--border py-md-4">
+                                <div class="d-flex align-items-center customCard--w">
+                                    <div class="roomImg--w">
+                                        <img src="https://images.unsplash.com/photo-1583845112203-29329902332e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+                                            class="roomImg" alt="...">
+                                    </div>
+                                    <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
+                                        <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Double
+                                            Room B</h6>
+                                        <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
+                                        <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-wifi  mr-2"></i>
+                                                <span class="d-none d-lg-inline"> Wi-Fi</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-tv text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> breakfast</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-utensils text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> television</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="far fa-snowflake text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> air conditioner</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-concierge-bell text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> room service</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-smoking-ban text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> smoke free</span>
+                                            </li>
+
+                                        </ul>
+                                        <p class="mb-0 d-md-none">
+                                            <!-- <span> -->
+                                            <i class="fas fa-user-alt"></i>
+                                            <i class="fas fa-user-alt"></i>
+                                            <!-- </span> -->
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
-                                    <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Double Room B</h6>
-                                    <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
-                                    <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-wifi  mr-2"></i>
-                                            <span class="d-none d-lg-inline"> Wi-Fi</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-tv text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> breakfast</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-utensils text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> television</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="far fa-snowflake text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> air conditioner</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-concierge-bell text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> room service</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-smoking-ban text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> smoke free</span>
-                                        </li>
-                                        
-                                    </ul>
-                                    <p class="mb-0 d-md-none">
-                                        <!-- <span> -->
-                                            <i class="fas fa-user-alt"></i>
-                                            <i class="fas fa-user-alt"></i>
-                                        <!-- </span> -->
+                            </div>
+                            <div
+                                class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
+                                <div class="roomImg--w d-flex justify-content-between">
+                                    <button class="btn">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" min="1" max="99" value="0"
+                                        class="border-0 text-center bg-transparent p-2">
+                                    <button class="btn ">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+                                    <!-- <del class="text-third fz-md">TWD 1,980</del> -->
+                                    <p class="font-weight-bold text-primary mb-0">
+                                        <span class="text-dark font-weight-bold">TWD </span>1,600
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
-                            <div class="roomImg--w d-flex justify-content-between">
-                                <button class="btn">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <input type="number" min="1" max="99" value="0" class="border-0 text-center bg-transparent p-2">
-                                <button class="btn ">
-                                    <i class="fas fa-plus"></i>
-                                </button>  
-                            </div>
-                            <div class="text-right">
-                                <!-- <del class="text-third fz-md">TWD 1,980</del> -->
-                                <p class="font-weight-bold text-primary mb-0"> 
-                                    <span class="text-dark font-weight-bold">TWD </span>1,600
+                        </th>
+                        <td class="customTableTd align-middle text-center">
+                            <span>
+                                <i class="fas fa-user-alt"></i>
+                                <i class="fas fa-user-alt"></i>
+                            </span>
+                        </td>
+                        <td class="customTableTd align-middle">
+                            <div class="fontOpenSans text-center">
+
+                                <p class="fz-md-h6 font-weight-bold text-dark mb-0">
+                                    <span class="text-dark font-weight-bold">TWD </span> 1,600
                                 </p>
+                                <p class="text-third fz-md-sm mb-0">per night</p>
                             </div>
-                        </div>
-                    </th>
-                    <td class="customTableTd align-middle text-center">
-                        <span>
-                            <i class="fas fa-user-alt"></i>
-                            <i class="fas fa-user-alt"></i>
-                        </span>
-                    </td>
-                    <td class="customTableTd align-middle">
-                        <div class="fontOpenSans text-center">
-                            
-                            <p class="fz-md-h6 font-weight-bold text-dark mb-0"> 
-                                <span class="text-dark font-weight-bold">TWD </span> 1,600
-                            </p>
-                            <p class="text-third fz-md-sm mb-0">per night</p>
-                        </div>
-                    </td>
-                    <td class="customTableTd align-middle text-center">
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="roomDetailNum">0</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
-                    </td>
+                        </td>
+                        <td class="customTableTd align-middle text-center">
+                            <button class="btn"><i class="fas fa-minus"></i></button>
+                            <span id="roomDetailNum">0</span>
+                            <button class="btn"><i class="fas fa-plus"></i></button>
+                        </td>
                     </tr>
                     <tr>
-                    <th>
-                        <div class="card  customCard--border py-md-4">
-                            <div class="d-flex align-items-center customCard--w">
-                                <div class="roomImg--w">
-                                    <img src="https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" class="roomImg" alt="...">
+                        <th>
+                            <div class="card  customCard--border py-md-4">
+                                <div class="d-flex align-items-center customCard--w">
+                                    <div class="roomImg--w">
+                                        <img src="https://images.unsplash.com/photo-1560747571-e9b3c7e7868c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+                                            class="roomImg" alt="...">
+                                    </div>
+                                    <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
+                                        <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Suite
+                                            with Pool</h6>
+                                        <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
+                                        <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-wifi  mr-2"></i>
+                                                <span class="d-none d-lg-inline"> Wi-Fi</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-tv text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> breakfast</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-utensils text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> television</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="far fa-snowflake text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> air conditioner</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-concierge-bell text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> room service</span>
+                                            </li>
+                                            <li class="mb-lg-2 text-third">
+                                                <i class="fas fa-smoking-ban text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> smoke free</span>
+                                            </li>
+                                            <li class="text-third">
+                                                <i class="fas fa-glass-martini-alt text-third mr-2"></i>
+                                                <span class="d-none d-lg-inline"> mini bar</span>
+                                            </li>
+                                        </ul>
+                                        <p class="mb-0 d-md-none">
+                                            <i class="fas fa-user-alt"></i>
+                                            <i class="fas fa-user-alt"></i>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="card-body pl-2 pr-4 py-lg-2 px-lg-3 ">
-                                    <h6 class="card-title font-weight-bold mb-1 pr-3 mb-md-0 mb-lg-1">Deluxe Suite with Pool</h6>
-                                    <p class="card-text text-third fz-sm mb-2 mb-md-3">1 bed (Queen size)</p>
-                                    <ul class="roomDetails d-flex d-lg-inline-block p-0 mb-2 mb-md-0">
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-wifi  mr-2"></i>
-                                            <span class="d-none d-lg-inline"> Wi-Fi</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-tv text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> breakfast</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-utensils text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> television</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="far fa-snowflake text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> air conditioner</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-concierge-bell text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> room service</span>
-                                        </li>
-                                        <li class="mb-lg-2 text-third">
-                                            <i class="fas fa-smoking-ban text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> smoke free</span>
-                                        </li>
-                                        <li class="text-third">
-                                            <i class="fas fa-glass-martini-alt text-third mr-2"></i>
-                                            <span class="d-none d-lg-inline"> mini bar</span>
-                                        </li>
-                                    </ul>
-                                    <p class="mb-0 d-md-none">
-                                        <i class="fas fa-user-alt"></i>
-                                        <i class="fas fa-user-alt"></i>
+                            </div>
+                            <div
+                                class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
+                                <div class="roomImg--w d-flex justify-content-between">
+                                    <button class="btn">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" min="1" max="99" value="0"
+                                        class="border-0 text-center bg-transparent p-2">
+                                    <button class="btn ">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="text-right">
+
+                                    <p class="font-weight-bold text-dark mb-0">
+                                        <span class="text-dark font-weight-bold">TWD </span>1,980
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center p-2 bg-primary-light d-md-none">
-                            <div class="roomImg--w d-flex justify-content-between">
-                                <button class="btn">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <input type="number" min="1" max="99" value="0" class="border-0 text-center bg-transparent p-2">
-                                <button class="btn ">
-                                    <i class="fas fa-plus"></i>
-                                </button>  
-                            </div>
-                            <div class="text-right">
-                               
-                                <p class="font-weight-bold text-dark mb-0"> 
+                        </th>
+                        <td class="customTableTd align-middle text-center">
+                            <span>
+                                <i class="fas fa-user-alt"></i>
+                                <i class="fas fa-user-alt"></i>
+                            </span>
+                        </td>
+                        <td class="customTableTd align-middle">
+                            <div class="fontOpenSans text-center">
+
+                                <p class="fz-md-h6 font-weight-bold text-primary mb-0">
                                     <span class="text-dark font-weight-bold">TWD </span>1,980
                                 </p>
+                                <p class="text-third fz-md-sm mb-0">per night</p>
                             </div>
-                        </div>
-                    </th>
-                    <td class="customTableTd align-middle text-center">
-                        <span>
-                            <i class="fas fa-user-alt"></i>
-                            <i class="fas fa-user-alt"></i>
-                        </span>
-                    </td>
-                    <td class="customTableTd align-middle">
-                        <div class="fontOpenSans text-center">
-                           
-                            <p class="fz-md-h6 font-weight-bold text-primary mb-0"> 
-                                <span class="text-dark font-weight-bold">TWD </span>1,980
-                            </p>
-                            <p class="text-third fz-md-sm mb-0">per night</p>
-                        </div>
-                    </td>
-                    <td class="customTableTd align-middle text-center">
-                        <button class="btn"><i class="fas fa-minus"></i></button>
-                        <span id="roomDetailNum">0</span>
-                        <button class="btn"><i class="fas fa-plus"></i></button>
-                    </td>
+                        </td>
+                        <td class="customTableTd align-middle text-center">
+                            <button class="btn"><i class="fas fa-minus"></i></button>
+                            <span id="roomDetailNum">0</span>
+                            <button class="btn"><i class="fas fa-plus"></i></button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -539,105 +575,104 @@
 </section>
 
 
-
-   <!-- subscribe-->
-<section class="subscribe">
-        <div class="bg-primary-light" >
-            <div class="container">            
-            <div class="row align-items-center">
-                <div class="col-12 pt-4 pt-md-0 col-md-4 col-xl-5 ">
-                  <p class="h4 fz-lg-h3 fontRaleway mb-0">Subscribe for Exclusive Offer</p>
-                </div>
-                <div class="col-12 col-md-8 col-xl-7">
-                    <div class="pt-3 pb-4 inputCustom--p py-xl-4 d-flex">
-                        <input type="email" class="inputCustom--w" placeholder="Your email address">
-                        <button class="inputGroupBtn inputGroupBtn--w font-weight-bold ">SUBSCRIBE</button>
-                    </div>
-                </div>
+  <!-- subscribe-->
+  <section class="subscribe">
+    <div class="bg-primary-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 pt-4 pt-md-0 col-md-4 col-xl-5 ">
+            <p class="h4 fz-lg-h3 fontRaleway mb-0">Subscribe for Exclusive Offer</p>
+          </div>
+          <div class="col-12 col-md-8 col-xl-7">
+            <div class="pt-3 pb-4 inputCustom--p py-xl-4 d-flex">
+              <input type="email" class="inputCustom--w" placeholder="Your email address">
+              <button class="inputGroupBtn inputGroupBtn--w font-weight-bold ">SUBSCRIBE</button>
             </div>
-            </div>
-        </div>
-    </section>
-    
-    
-
-    <footer class="container footer fixed-bottom">
-      <div class="row">
-        <div class="col-12 ">
-          <div class="d-flex flex-column-reverse align-items-center flex-md-row fontOpenSans py-4 py-md-0">
-            <!-- 版權宣告 -->
-            <p class="text-third fz-md mb-0 mt-3 mt-md-0 mr-md-auto  mr-lg-8 py-md-4 py-customer ">
-              &copy; 2020 ALOHA, Inc. All rights reserved.
-            </p>
-            <!-- faqs -->
-            <ul class="list-unstyled d-flex justify-content-between mb-0">
-              <li class="pr-4">
-                <a href="#" class="fz-md d-block py-md-4 py-customer">FAQs</a>
-              </li>
-              <li class="pr-4">
-                <a href="#" class="fz-md d-block py-md-4 py-customer">Terms of use</a>
-              </li>
-              <li>
-                <a href="#" class="fz-md d-block py-md-4 py-customer">Privacy policy</a>
-              </li>
-            </ul>
-            <!-- language&price -->
-            <ul
-            class="language list-unstyled d-none d-lg-block d-lg-flex mb-lg-0 ml-lg-auto">
-              <li class="d-lg-flex mr-4 ">
-                <!-- <a href="#" class="d-block mr-2 ">
-                  <i class="fas fa-globe "></i>
-                </a> -->
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-block mr-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-globe "></i>
-                      English
-                    </a>
-                  
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">繁體中文</a>
-                      <a class="dropdown-item" href="#">English</a>
-                      <a class="dropdown-item" href="#">日文</a>
-                    </div>
-                  </div>
-                
-              </li>
-
-              <li class="d-lg-flex">
-                  <a href="#" class="d-block mr-2 ">
-                    <i class="fas fa-dollar-sign "></i> 
-                  </a>
-                  <ul class="list-unstyled ">
-                    <li class="d-lg-flex ">
-                      <a href="#">TWD</a>
-                      <!-- 下拉箭頭 -->
-                      <i class="fas fa-sort-down"></i>
-                    </li>
-                    <li>
-                      <a href="#" class="d-none">USA</a>
-                    </li>
-                  </ul>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <script src="./assets/js/vendors.js"></script>
-    <!-- datepicker -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    
-    
-    <!--Plugin JavaScript file-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-    <!--SWIPER--> -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- self -->
-    <script src="./assets/js/all.js"></script>
-  </body>
+
+
+  <footer class="container footer fixed-bottom">
+    <div class="row">
+      <div class="col-12 ">
+        <div class="d-flex flex-column-reverse align-items-center flex-md-row fontOpenSans py-4 py-md-0">
+          <!-- 版權宣告 -->
+          <p class="text-third fz-md mb-0 mt-3 mt-md-0 mr-md-auto  mr-lg-8 py-md-4 py-customer ">
+            &copy; 2020 ALOHA, Inc. All rights reserved.
+          </p>
+          <!-- faqs -->
+          <ul class="list-unstyled d-flex justify-content-between mb-0">
+            <li class="pr-4">
+              <a href="#" class="fz-md d-block py-md-4 py-customer">FAQs</a>
+            </li>
+            <li class="pr-4">
+              <a href="#" class="fz-md d-block py-md-4 py-customer">Terms of use</a>
+            </li>
+            <li>
+              <a href="#" class="fz-md d-block py-md-4 py-customer">Privacy policy</a>
+            </li>
+          </ul>
+          <!-- language&price -->
+          <ul class="language list-unstyled d-none d-lg-block d-lg-flex mb-lg-0 ml-lg-auto">
+            <li class="d-lg-flex mr-4 ">
+              <!-- <a href="#" class="d-block mr-2 ">
+                  <i class="fas fa-globe "></i>
+                </a> -->
+              <div class="dropdown">
+                <a class="dropdown-toggle d-block mr-2" href="#" role="button" id="dropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-globe "></i>
+                  English
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">繁體中文</a>
+                  <a class="dropdown-item" href="#">English</a>
+                  <a class="dropdown-item" href="#">日文</a>
+                </div>
+              </div>
+
+            </li>
+
+            <li class="d-lg-flex">
+              <a href="#" class="d-block mr-2 ">
+                <i class="fas fa-dollar-sign "></i>
+              </a>
+              <ul class="list-unstyled ">
+                <li class="d-lg-flex ">
+                  <a href="#">TWD</a>
+                  <!-- 下拉箭頭 -->
+                  <i class="fas fa-sort-down"></i>
+                </li>
+                <li>
+                  <a href="#" class="d-none">USA</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/vendors.js"></script>
+  <!-- datepicker -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+  <!--Plugin JavaScript file-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+  <!--SWIPER-->
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- self -->
+  <script src="./assets/js/all.js"></script>
+</body>
 
 </html>

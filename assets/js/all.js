@@ -366,7 +366,8 @@ roomPlus.onclick = function () {
 
 var serchBtn = document.getElementById('js-serchBtn');
 var reserveDay = document.getElementById('reportrange');
-var saveSerchData = {}; //取得搜尋面板的資訊
+var saveSerchData = [];
+var userData; //取得搜尋面板的資訊
 
 function getSerchData(e) {
   e.preventDefault(); //存取地點
@@ -377,12 +378,13 @@ function getSerchData(e) {
 
   var saveGuests = guests.innerText; //將資料存入物件中
 
-  saveSerchData = {
+  saveSerchData = [{
     Location: saveLocation,
     ReserveDay: saveReserveDay,
     Guests: saveGuests
-  };
-  console.log(saveSerchData); //如果有沒有填入資料，提醒使用者
+  }];
+  console.log(saveSerchData);
+  savetoLocal(); //如果沒有填入資料，提醒使用者
 
   if (saveLocation == "Destination") {
     alert('Must be select your destination.');
@@ -394,13 +396,38 @@ function getSerchData(e) {
   }
 
   ;
-} //將資料寫入result搜尋頁面
+} //將資料存進localstorage
 
 
-function pushSerchData() {} //監聽serch按鈕，並取得使用者輸入的資料
+var allData = [];
+
+function savetoLocal() {
+  //將資料存到localstorage中
+  var userSelect = JSON.stringify(saveSerchData);
+  localStorage.setItem('serchData', userSelect); //將字串型態轉型為JSON
+
+  var getUserSelect = JSON.parse(localStorage.getItem('serchData')); // let getUserSelectAry = JSON.parse(getUserSelect);
+  //取出localstorage的資料
+
+  userData = getUserSelect[0].Location;
+  console.log(userData);
+  var b = [];
+  b.push(userData);
+  console.log(b);
+} // showUserSelect();
+//將資料寫入result搜尋頁面
+// function pushSerchData() {
+//     let pushlocalstr = localStorage.getItem('location');
+//     alert(pushlocalstr);
+// }
+//監聽serch按鈕，並取得使用者輸入的資料
 
 
-serchBtn.addEventListener('click', getSerchData); // totalPerson.addEventListener()
+serchBtn.addEventListener('click', getSerchData); // function showUserSelect() {
+//     //帶入資料錯誤 需更改
+//     document.querySelector('.js-resultLocation').innerHTML = `<span class="mb-0 text-center"><i class="fas fa-map-marker-alt mr-3 text-dark"></i>123<span>`;
+// }
+// totalPerson.addEventListener()
 // function checkPersonNum(e){
 //     e.preventDefault();//取消a連結的預設動作
 //     let guests=e.target.textContent;
@@ -492,6 +519,72 @@ function showlogin(data) {
   } else if (data.message == "Email 格式不正確") {
     alert("Email格式不正確");
   }
+}
+
+;
+"use strict";
+
+var data; // let roomData;
+// let xhr = new XMLHttpRequest();
+// xhr.open('get', 'https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json', true);
+// xhr.send(null);
+// xhr.onload = function () {
+//     data = JSON.parse(xhr.responseText);
+//     roomData = data.room;
+//     console.log(roomData); //撈出房間的json資料
+// };
+//使用fetch撈取房間遠端資料
+
+var url = 'https://raw.githubusercontent.com/snowcherry919/bookjson/master/room.json'; // async function getRoomData() {
+//     await fetch(url)
+//         .then(res => {
+//             return res.json();
+//         })
+//         .then(result => {
+//             // console.log(result);
+//             let roomData = result.room;
+//             console.log(roomData);
+//             //渲染畫面
+//             dataRender(roomData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//         })
+// };
+
+fetch(url).then(function (res) {
+  return res.json();
+}).then(function (res) {
+  console.log(res);
+  var roomData = res.room;
+  console.log(roomData); //渲染畫面
+
+  dataRender(roomData);
+})["catch"](function (err) {
+  console.log(err);
+});
+var roomCard = document.querySelector('.roomCard'); //渲染星等
+
+function startIcon(num) {
+  if (num == 1) {
+    return "<i class=\"fas fa-star\"></i>";
+  } else if (num == 2) {
+    return "<i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>";
+  } else if (num == 3) {
+    return "<i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>";
+  } else if (num == 4) {
+    return "<i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>";
+  } else if (num == 5) {
+    return "<i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>\n                <i class=\"fas fa-star\"></i>";
+  }
+} //將資料塞入畫面
+
+
+function dataRender(roomData) {
+  var roomCardContent = roomData.map(function (item) {
+    return "\n<div class=\"roomCard card\">\n    <div class=\"row no-gutters my-md-3 my-lg-4 flex-xl-nowrap \">\n       \n        <div class=\"col-auto\">\n            <img src=\"".concat(item.imageUrl[0], "\" class=\"card-img\" alt=\"roomPhoto\">\n        </div>\n        <div class=\"col col-md-8 col-lg-8 col-xl-8\">\n            <div class=\"card-body px-2 py-1 p-md-2 p-lg-3 h-100\">\n                <div class=\"roomHeader  d-md-flex justify-content-between mb-md-2 mb-lg-3\">\n                    <div class=\"d-flex flex-wrap flex-column\">\n                        <p class=\"fz-sm text-primary mb-0\">\n                            ").concat(item.city, "\n                            <span class=\"fz-sm distance text-third d-none mb-0 d-xl-inline\">\n                            ").concat(item.distanceFromCenter, "\n                            </span>\n                        </p>\n                        <h6 class = \"card-title fontRaleway font-weight-bold mb-1 mb-md-0 fz-lg-h4\"><a href=\"detail.html\"> ").concat(item.hotelName, "</a></h6>\n                    </div>\n                    <div>\n                        <p class=\" mb-1 mb-md-0 start fz-sm fz-lg-md\">\n                            ").concat(startIcon(Math.round(item.start)), "\n                            \n                            <span class=\" d-md-block d-xl-inline text-third text-md-right \">").concat(item.start, " (").concat(item.evaluation, ")</span> \n                        </p>\n                    </div>\n                </div>\n                <div class=\"roomBody d-lg-flex justify-content-lg-between\">\n                    <div class=\"roomStyle--change mb-md-0 \">\n                        <p class=\"card-text fz-md font-weight-bold text-third mb-0 mb-lg-1\">\n                        ").concat(item.roomSize, "\n                        </p>\n                        <p class=\"roomPersonNum card-text fz-sm text-third  mb-2 mb-md-0 mb-lg-3\">\n                        ").concat(item.descriptionShort.GuestMax, " guests\u30FB").concat(item.descriptionShort.Bed, " ").concat(item.descriptionShort.bedSize, "\n                        </p>\n                        ").concat(item.amenities.freeCancellation ? "<span class=\"badge badge-pill badge-primary-light text-third border-0 d-none  fz-md-xs mb-xl-1 d-lg-inline\">Free cancellation</span>" : "", "\n                        ").concat(item.amenities.noPrepayment ? "<span class=\"badge badge-pill badge-primary-light text-third border-0 d-none fz-md-xs mb-xl-1 d-lg-inline \">No prepayment</span>" : "", "\n                    </div>\n                \n                    <div class=\"roomPrice d-md-flex justify-content-md-between align-items-md-center\">\n                        <div class=\"mt-md-2\">\n                            ").concat(item.amenities.freeCancellation ? "<span class=\"badge badge-pill badge-primary-light text-third border-0 d-none d-md-block fz-md-xs mb-md-1 mb-xl-0 d-lg-none \">Free cancellation</span>" : "", "\n                            ").concat(item.amenities.noPrepayment ? "<span class=\"badge badge-pill badge-primary-light text-third border-0 d-none d-md-block fz-md-xs mb-md-1  mb-xl-0 d-lg-none\">No prepayment</span>" : "", "\n                        </div>\n                        <div class=\"text-right\">\n                            <p class=\"text-third  mb-0 d-none d-md-block  fz-md-sm  my-lg-1\">per night</p>\n                            ").concat(item.holidayPrice ? "<del class=\"text-third  fz-sm fz-lg-h6 fontRaleway\">TWD 1,980</del>" : "", "\n                            <p class=\"h6 fz-lg-h4  fontRaleway mb-0  font-weight-bold\">TWD \n                            ").concat(item.holidayPrice ? "<span class=\"text-primary\">".concat(item.holidayPrice.toLocaleString(), " <span>") : "".concat(item.normalDayPrice.toLocaleString()), "</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+  }).join('');
+  roomCard.innerHTML = roomCardContent;
 }
 
 ;

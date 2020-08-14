@@ -12,16 +12,20 @@
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <!--Plugin CSS file with desired skin-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
     <!-- swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;800&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/style/all.css">
 </head>
+
 <body>
-    
+
     <header class="container position-relative">
         <div class="row">
             <div class="col-12">
@@ -29,25 +33,26 @@
                     <!-- logo圖 -->
                     <h1 class="logo m-0 mr-auto">
                         <a href="index.html" class="hide-text">
-                        ALOHA
+                            ALOHA
                         </a>
                     </h1>
                     <!-- 關閉icon -->
                     <div class="d-md-none">
-                        <a href="success.html"><i class="fas fa-times"></i></a> 
+                        <a href="success.html"><i class="fas fa-times"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
+
 
     <section class="mt-md-2 mt-lg-0">
         <div class=" container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="signupText d-none d-lg-block">
-                        <p class="loginTitle h1 fontRaleway text-dark font-weight-bolder mb-3 ">An ideal hotel makes a wonderful Trip.</p>
+                        <p class="loginTitle h1 fontRaleway text-dark font-weight-bolder mb-3 ">An ideal hotel makes a
+                            wonderful Trip.</p>
                         <p class="loginDes text-third fz-md">Discover your dream destination and hotel on ALOHA.com</p>
                     </div>
                 </div>
@@ -56,35 +61,43 @@
                     <form class="reserve" action="#" id="signupForm">
                         <div class="form-group">
                             <label for="signupName">Name</label>
-                            <input type="text" name="signupName" class="form-control" id="signupName"  required>
+                            <input type="text" name="signupName" class="form-control" id="signupName" required>
                             <div id="erro_signupName"></div>
                         </div>
                         <div class="form-group">
                             <label for="signupEmail">Email</label>
-                            <input type="email" name="signupEmail" class="form-control" id="signupEmail" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <input type="email" name="signupEmail" class="form-control" id="signupEmail" required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             <div id="erro_signupEmail"></div>
                         </div>
                         <div class="form-group mb-4">
                             <label for="signupPassword">Password</label>
-                            <input type="password" name="signupPassword" class="form-control" id="signupPassword"  required pattern="[a-zA-Z0-9]{8}">
+                            <input type="password" name="signupPassword" class="form-control" id="signupPassword"
+                                required pattern="[a-zA-Z0-9]{8}">
                             <div id="erro_signupPassword"></div>
                         </div>
                         <!-- 確認密碼 -->
                         <div class="form-group mb-4">
                             <label for="signupRepassword">Confirm Password</label>
-                            <input type="password" name="signupRepassword" class="form-control" id="signupRepassword" required pattern="[a-zA-Z0-9]{8}">
+                            <input type="password" name="signupRepassword" class="form-control" id="signupRepassword"
+                                required pattern="[a-zA-Z0-9]{8}">
                             <div id="erro_signupRepassword"></div>
                         </div>
-                        <p class="fz-sm text-third mb-3">By signing in or creating an account, you agree with our <a href="#" class="text-primary">Terms & Conditions</a> and <a href="#" class="text-primary"> Privacy Statement</a></p>
-                        
+                        <p class="fz-sm text-third mb-3">By signing in or creating an account, you agree with our <a
+                                href="#" class="text-primary">Terms & Conditions</a> and <a href="#"
+                                class="text-primary"> Privacy Statement</a></p>
+
                         <label class="customCheckbox form-check-label  text-third " for="signupCheck">
-                            <input type="checkbox" name="signupCheck" checked="checked" class="customInput form-check-input" id="signupCheck" >
+                            <input type="checkbox" name="signupCheck" checked="checked"
+                                class="customInput form-check-input" id="signupCheck">
                             <span class="checkmark"></span>
                             Remember me
                         </label>
-                        
-                        <button id="signupBtn" type="submit" class="reserveBtn btn btn-primary btn-block font-weight-bold mb-2">Sign Up</button>
-                        <p class="text-center fz-md">Have an account yet? <a href="login.html" class="text-primary font-weight-bold">LOGIN</a></p>
+
+                        <button id="signupBtn" type="submit"
+                            class="reserveBtn btn btn-primary btn-block font-weight-bold mb-2">Sign Up</button>
+                        <p class="text-center fz-md">Have an account yet? <a href="login.html"
+                                class="text-primary font-weight-bold">LOGIN</a></p>
                     </form>
                 </div>
             </div>
@@ -105,12 +118,12 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!--Plugin JavaScript file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-    <!--SWIPER--> -->
+    <!--SWIPER-->
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- self -->
     <script src="./assets/js/all.js"></script>
     <script src="./assets/js/formcheck.js"></script>
-  </body>
+</body>
 
 </html>
